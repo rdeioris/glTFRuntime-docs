@@ -7,6 +7,8 @@ Check the Features Showcase: https://www.youtube.com/watch?v=6058JA8wX8I
 
 Buy it from the Marketplace to support the development: https://www.unrealengine.com/marketplace/en-US/product/gltfruntime
 
+Official sources available at https://github.com/rdeioris/glTFRuntime
+
 ![glTFRuntime](Docs/Screenshots/glTFRuntime512.jpg?raw=true "glTFRuntime")
 
 # Features
