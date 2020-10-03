@@ -298,6 +298,7 @@ Just remember a bunch of notes:
 * StaticMeshes/SkeletalMeshes merger (combine multiple meshes in a single one)
 * Android/iOS runtime support (only from Url or strings)
 * Support up to 12 bone/joint influences
+* Morph Targets
 
 # Commercial Support
 
