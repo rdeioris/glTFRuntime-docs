@@ -13,15 +13,21 @@ Official sources available at https://github.com/rdeioris/glTFRuntime
 
 # Features
 
-* Allows to load Static Meshes, Skeletal Meshes, Animations, Hierarchies, Materials and Textures from glTF 2.0 Embedded (.gltf) or Binary (.glb) files.
+* Allows to load Static Meshes, Skeletal Meshes, Animations, Cameras, Hierarchies, Materials and Textures from glTF 2.0 Embedded (.gltf) or Binary (.glb) files.
 * Assets can be loaded on the fly both in PIE and Packaged Games.
 * Assets can be loaded from the filesystem, http servers or raw json strings.
+* Assets can be compressed with gzip (will be decompressed on the fly)
 * Supports generating ad-hoc Skeletons or reusing already existing ones (a gltf Exporter for Skeletons is included too)
 * Non skeletons/skins-related animations are exposed as Curves.
 * Full support for PBR Materials
+* Support for the Specular/Glossiness extension (KHR_materials_pbrSpecularGlossiness)
 * Support for glTF 2.0 Sparse Accessors
 * Support for multiple texture coordinates/channels/uvs
 * Allows to define Static Meshes collisions (Spheres, Boxes, Complex Meshes) at runtime.
+* StaticMeshes can be imported as SkeletalMeshes (with a single root bone) and the opposite.
+* Support for MorphTargets
+* Support for merging multiple meshes on the same skeleton
+* Support for Vertex Colors
 
 # Quickstart
 
@@ -289,16 +295,14 @@ Just remember a bunch of notes:
 # TODO/WIP
 
 * LODs
-* Vertex Colors
 * Async Loading
 * Import Scenes as Sequencer Assets
 * Generate Physics Assets at runtime
 * Instancing Extension (https://github.com/KhronosGroup/glTF/blob/master/extensions/2.0/Vendor/EXT_mesh_gpu_instancing/README.md)
 * MSFT_lod extension (https://github.com/KhronosGroup/glTF/blob/master/extensions/2.0/Vendor/MSFT_lod/README.md)
-* StaticMeshes/SkeletalMeshes merger (combine multiple meshes in a single one)
+* More merge features
 * Android/iOS runtime support (only from Url or strings)
 * Support up to 12 bone/joint influences
-* Morph Targets
 
 # Commercial Support
 
