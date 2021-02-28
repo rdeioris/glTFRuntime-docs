@@ -38,3 +38,24 @@ So if you are asset as a skeleton with a bone named FooBar in it, this extension
 
 The mapping is managed by the  `$.extensions.VRM.humanoid.humanBones` array, so the first thing we need to do is knowing the size of the array to start indexing its elements:
 
+
+![VRMhumanoid](Docs/Screenshots/VRMhumanoid.PNG?raw=true "VRMhumanoid")
+
+The GetArrySizeFromPath will return the size of the specified array.
+
+Now we can iterate the list of bones. The Json is something like this:
+
+```json
+"humanoid":
+  {"humanBones":
+    [
+      {"bone":"hips","node":3,"useDefaultValues":true},
+      {"bone":"leftUpperLeg","node":123,"useDefaultValues":true},
+      {"bone":"rightUpperLeg","node":136,"useDefaultValues":true}
+    ]
+  }
+```
+
+So assuming BonesSize is an integer variable holding the array size we can access all of the 'bone' fields with:
+
+![VRMhumanoidBones](Docs/Screenshots/VRMhumanoidBones.PNG?raw=true "VRMhumanoidBones")
