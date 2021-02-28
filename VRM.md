@@ -55,3 +55,7 @@ Now we can iterate the list of bones. The Json is something like this:
     ]
   }
 ```
+
+So assuming BonesSize is an integer variable holding the array size we can access all of the 'bone' fields with:
+
+![VRMhumanoidBones](Docs/Screenshots/VRMhumanoidBones.PNG?raw=true "VRMhumanoidBones")
