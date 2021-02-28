@@ -264,7 +264,7 @@ https://github.com/rdeioris/glTFRuntime/blob/master/Source/glTFRuntime/Private/g
 
 # glTF JSON low-level api (A.K.A. managing VRM assets)
 
-Check 
+Check https://github.com/rdeioris/glTFRuntime-docs/blob/master/VRM.md
 
 # Errors Management
 
