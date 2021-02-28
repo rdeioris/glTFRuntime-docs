@@ -28,6 +28,7 @@ Official sources available at https://github.com/rdeioris/glTFRuntime
 * Support for MorphTargets
 * Support for merging multiple meshes on the same skeleton
 * Support for Vertex Colors
+* Support for VRM extensions
 
 # Quickstart
 
@@ -260,6 +261,10 @@ And their children:
 Obviously all of this stuff should be made recursive, check the glTFRuntimeAssetActor implementation for some idea:
 
 https://github.com/rdeioris/glTFRuntime/blob/master/Source/glTFRuntime/Private/glTFRuntimeAssetActor.cpp
+
+# glTF JSON low-level api (A.K.A. managing VRM assets)
+
+Check 
 
 # Errors Management
 
