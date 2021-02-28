@@ -65,3 +65,20 @@ Or if you want to get the joint name from the node id (read: the true bone name 
 ![VRMhumanoidJoints](Docs/Screenshots/VRMhumanoidJoints.PNG?raw=true "VRMhumanoidJoints")
 
 # C++/Blueprint UFunctions
+
+```cpp
+  UFUNCTION(BlueprintCallable, BlueprintPure, Category = "glTFRuntime")
+	FString GetStringFromPath(const TArray<FglTFRuntimePathItem> Path, bool& bFound) const;
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "glTFRuntime")
+	int64 GetIntegerFromPath(const TArray<FglTFRuntimePathItem> Path, bool& bFound) const;
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "glTFRuntime")
+	float GetFloatFromPath(const TArray<FglTFRuntimePathItem> Path, bool& bFound) const;
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "glTFRuntime")
+	bool GetBooleanFromPath(const TArray<FglTFRuntimePathItem> Path, bool& bFound) const;
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "glTFRuntime")
+	int32 GetArraySizeFromPath(const TArray<FglTFRuntimePathItem> Path, bool& bFound) const;
+```
