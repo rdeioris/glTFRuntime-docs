@@ -21,3 +21,20 @@ In JSONPath syntax would be: `$.extensions.VRM.meta.author`
 While via blueprint you can do something like this:
 
 ![VRMmeta](Docs/Screenshots/VRMmeta.PNG?raw=true "VRMmeta")
+
+The key here is understanding the glTFRuntimePathitem structure: if the Index field is -1, then we are asking for an object field, it is higher than -1 then the field is is an array and we are getting the 'Index' element.
+
+As there are no array involved here, we do not need indexes.
+
+# extensions.VRM.humanoid
+
+This is a more interesting one: https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md#vrm-extension-models-bone-mapping-jsonextensionsvrmhumanoid
+
+it allows to define the joint mapped to a specific (known) humanoid bone.
+
+There is an official list of bones: https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md#defined-bones
+
+So if you are asset as a skeleton with a bone named FooBar in it, this extension will allow you to recogninze FooBar as a 'jaw'
+
+The mapping is managed by the  `$.extensions.VRM.humanoid.humanBones` array, so the first thing we need to do is knowing the size of the array to start indexing its elements:
+
