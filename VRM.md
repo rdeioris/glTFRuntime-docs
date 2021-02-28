@@ -59,3 +59,9 @@ Now we can iterate the list of bones. The Json is something like this:
 So assuming BonesSize is an integer variable holding the array size we can access all of the 'bone' fields with:
 
 ![VRMhumanoidBones](Docs/Screenshots/VRMhumanoidBones.PNG?raw=true "VRMhumanoidBones")
+
+Or if you want to get the joint name from the node id (read: the true bone name of the Unreal skeleton):
+
+![VRMhumanoidJoints](Docs/Screenshots/VRMhumanoidJoints.PNG?raw=true "VRMhumanoidJoints")
+
+# C++/Blueprint UFunctions
