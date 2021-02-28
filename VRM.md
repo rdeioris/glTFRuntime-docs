@@ -20,3 +20,4 @@ In JSONPath syntax would be: `$.extensions.VRM.meta.author`
 
 While via blueprint you can do something like this:
 
+![VRMmeta](Docs/Screenshots/VRMmeta.PNG?raw=true "VRMmeta")
