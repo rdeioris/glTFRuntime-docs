@@ -40,3 +40,18 @@ The mapping is managed by the  `$.extensions.VRM.humanoid.humanBones` array, so 
 
 
 ![VRMhumanoid](Docs/Screenshots/VRMhumanoid.PNG?raw=true "VRMhumanoid")
+
+The GetArrySizeFromPath will return the size of the specified array.
+
+Now we can iterate the list of bones. The Json is something like this:
+
+```json
+"humanoid":
+  {"humanBones":
+    [
+      {"bone":"hips","node":3,"useDefaultValues":true},
+      {"bone":"leftUpperLeg","node":123,"useDefaultValues":true},
+      {"bone":"rightUpperLeg","node":136,"useDefaultValues":true}
+    ]
+  }
+```
