@@ -38,3 +38,5 @@ So if you are asset as a skeleton with a bone named FooBar in it, this extension
 
 The mapping is managed by the  `$.extensions.VRM.humanoid.humanBones` array, so the first thing we need to do is knowing the size of the array to start indexing its elements:
 
+
+![VRMhumanoid](Docs/Screenshots/VRMhumanoid.PNG?raw=true "VRMhumanoid")
