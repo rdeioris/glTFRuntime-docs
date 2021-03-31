@@ -17,6 +17,7 @@ Official sources available at https://github.com/rdeioris/glTFRuntime
 * Assets can be loaded on the fly both in PIE and Packaged Games.
 * Assets can be loaded from the filesystem, http servers or raw json strings.
 * Assets can be compressed with gzip (will be decompressed on the fly)
+* Assets can be archived in zip files (they will be extracted and decompressed on the fly)
 * Supports generating ad-hoc Skeletons or reusing already existing ones (a gltf Exporter for Skeletons is included too)
 * Non skeletons/skins-related animations are exposed as Curves.
 * Full support for PBR Materials
@@ -261,6 +262,15 @@ And their children:
 Obviously all of this stuff should be made recursive, check the glTFRuntimeAssetActor implementation for some idea:
 
 https://github.com/rdeioris/glTFRuntime/blob/master/Source/glTFRuntime/Private/glTFRuntimeAssetActor.cpp
+
+# Loading Zip archives
+
+If you specify a zip archive as the asset to load, glTFRuntime will use it as the source for all of the file/uri references in the json tree.
+
+The default behaviour is to search for the first file with .glb, .gltf, .json or .js extension in the archive, but you can force the file to use as the entry point
+by defining the ArchiveEntryPoint string in the LoaderConfig.
+
+Zip files can be loaded both from filesystem and HTTP servers.
 
 # glTF JSON low-level api (A.K.A. managing VRM assets)
 
