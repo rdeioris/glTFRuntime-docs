@@ -1,5 +1,7 @@
 # glTFRuntime
-Unreal Engine 4 Plugin for loading glTF assets at runtime 
+Unreal Engine 4 Plugin for loading glTF assets at runtime
+
+![Megagrant](Epic_MegaGrants_Recipient_logo_horizontal.png?raw=true "Megagrant")
 
 Join the Discord Channel: https://discord.gg/DzS7MHy
 
