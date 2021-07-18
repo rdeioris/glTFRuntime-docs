@@ -32,6 +32,7 @@ Official sources available at https://github.com/rdeioris/glTFRuntime
 * Support for merging multiple meshes on the same skeleton
 * Support for Vertex Colors
 * Support for VRM extensions
+* Preliminary support for Audio Emitters (MSFT_audio_emitter, wav files supported, vorbis and opus will be available soon)
 
 # Quickstart
 
