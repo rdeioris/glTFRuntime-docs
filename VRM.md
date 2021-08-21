@@ -1,6 +1,6 @@
 # Managing VRM assets via the low-level JSON API
 
-A low level api for traversing glTF assets json fields is exposed (both to C++ and blieprints). It is a low level api, so consider building your own abstractions over it.
+A low level api for traversing glTF assets json fields is exposed (both to C++ and blueprints). It is a low level api, so consider building your own abstractions over it.
 
 VRM (https://vrm.dev/en/) is a glTF extension adding informations for humanoid characters targeted at VR environments.
 
