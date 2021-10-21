@@ -1,5 +1,5 @@
 # glTFRuntime
-Unreal Engine 4 Plugin for loading glTF assets at runtime
+Unreal Engine Plugin for loading glTF assets at runtime
 
 ![Megagrant](Epic_MegaGrants_Recipient_logo_horizontal.png?raw=true "Megagrant")
 
@@ -36,6 +36,8 @@ Official sources available at https://github.com/rdeioris/glTFRuntime
 * Async SkeletalMesh loading
 
 Platforms supported are: Win64, Linux, Mac, Android, iOS
+
+Both UnrealEngine 4 and 5 are supported.
 
 # Quickstart
 
