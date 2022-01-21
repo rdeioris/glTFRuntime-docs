@@ -27,14 +27,15 @@ Official sources available at https://github.com/rdeioris/glTFRuntime
 * Support for the Specular/Glossiness extension (KHR_materials_pbrSpecularGlossiness)
 * Support for glTF 2.0 Sparse Accessors
 * Support for multiple texture coordinates/channels/uvs
-* Allows to define Static Meshes collisions (Spheres, Boxes, Complex Meshes) at runtime.
+* Allows to define Static Meshes collisions (Spheres, Boxes, Complex Meshes) at runtime as well as PhysicsAssets for SkeletalMeshes.
 * StaticMeshes can be imported as SkeletalMeshes (with a single root bone) and the opposite.
 * Support for MorphTargets
 * Support for merging multiple meshes on the same skeleton
 * Support for Vertex Colors
 * Support for VRM extensions
 * Preliminary support for Audio Emitters (MSFT_audio_emitter, wav files supported, vorbis and opus will be available soon)
-* Async SkeletalMesh loading
+* Support for KHR_mesh_quantization
+* Async StaticMesh and SkeletalMesh loading
 
 Platforms supported are: Win64, Linux, Mac, Android, iOS
 
@@ -319,9 +320,7 @@ Just remember a bunch of notes:
 # TODO/WIP
 
 * LODs
-* Async Loading for StaticMeshes
 * Import Scenes as Sequencer Assets
-* Generate Physics Assets at runtime
 * Instancing Extension (https://github.com/KhronosGroup/glTF/blob/master/extensions/2.0/Vendor/EXT_mesh_gpu_instancing/README.md)
 * MSFT_lod extension (https://github.com/KhronosGroup/glTF/blob/master/extensions/2.0/Vendor/MSFT_lod/README.md)
 * More merge features
