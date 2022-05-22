@@ -36,6 +36,7 @@ Official sources available at https://github.com/rdeioris/glTFRuntime
 * Preliminary support for Audio Emitters (MSFT_audio_emitter, wav files supported, vorbis and opus will be available soon)
 * Support for KHR_mesh_quantization
 * Async StaticMesh and SkeletalMesh loading
+* Support for KHR_materials_variants
 
 Platforms supported are: Win64, Linux, Mac, Android, iOS
 
