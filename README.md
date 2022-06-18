@@ -12,6 +12,8 @@ Buy it from the Marketplace to support the development: https://www.unrealengine
 
 Official sources available at https://github.com/rdeioris/glTFRuntime
 
+...and please read this before packaging your project! https://github.com/rdeioris/gltfruntime-docs#notes-when-packaging-a-game
+
 ![glTFRuntime](Docs/Screenshots/glTFRuntime512.jpg?raw=true "glTFRuntime")
 
 # Features
