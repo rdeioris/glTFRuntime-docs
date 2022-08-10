@@ -317,7 +317,7 @@ Just remember a bunch of notes:
 * Users can have the most bizarre filesystem layout, avoids using absolute paths, the Content directory is a good candidate for dynamically loading assets
 * Always expose errors feedback
 * Always check for invalid return value of the three main functions (glTFLoadAssetFromFilename, glTFLoadAssetFromString, glTFLoadAssetFromUrl). NULL check in C++ will be good enough as well as the IsValid node on Blueprints.
-* If you get an error about materials, it could be that your packaging procedure is not including the plugin's Content directory. Go to Project Settings/Packaging, and expand the main section for accessing advanced options. Now just add the glTFRuntime Content directory to 'Additional Asset Directories to Package'. You could be forced to do this even if you are using your customized materials. (note: if you get the same problem when hitting 'launch' in the editor, just run the level one time in PIE mode to force loading of the material asset)
+* If you get an error about materials, it could be that your packaging procedure is not including the plugin's Content directory. Go to Project Settings/Packaging, and expand the main section for accessing advanced options. Now just add the glTFRuntime Content directory to 'Additional Asset Directories to Cook' ('to Package' in UE4). You could be forced to do this even if you are using your customized materials. (note: if you get the same problem when hitting 'launch' in the editor, just run the level one time in PIE mode to force loading of the material asset)
 * If you do not see the /glTFRuntime folder into the content browser (or packaging settings), ensure to enable (in 'view options') both Engine and Plugins content.
 
 # TODO/WIP
