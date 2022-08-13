@@ -34,4 +34,6 @@ Let's configure the glTFRuntme Skeleton loader to automatically add a root bone:
 
 Now the result is way better:
 
+![Step1_Skeleton](RetargetingRPMAndMixamo_Data/Step1_Skeleton.PNG?raw=true "Step1_Skeleton")
+
 The root bone is "valid" (no more red bone in the Skeleton Editor)
