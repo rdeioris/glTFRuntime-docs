@@ -37,3 +37,15 @@ Now the result is way better:
 ![Step1_Skeleton](RetargetingRPMAndMixamo_Data/Step1_Skeleton.PNG?raw=true "Step1_Skeleton")
 
 The root bone is "valid" (no more red bone in the Skeleton Editor)
+
+## Step 2: Fixing Character position and CapsuleCollision height using Mesh Bounds
+
+We are going to fix the "flying avatar issue" by using the model bounds.
+
+Be prepared for a bit of spaghetti: 
+
+![Step2](RetargetingRPMAndMixamo_Data/Step1.PNG?raw=true "Step2")
+
+Thanks to the bounds height (the Z value, rememebr to break/split the Extent bounds pin of the GetBounds node) we can set the capsule 'Half Height' and move the SkeletalMeshComponent to the right vertical offset
+
+![Step2_Viewport](RetargetingRPMAndMixamo_Data/Step2_Viewport.PNG?raw=true "Step2_Viewport")
