@@ -86,6 +86,16 @@ The bones names of the Mixamo asset do not match the bones names of the RPM Avat
 
 # Step 5: Bones Names Remapping
 
-This is a pretty advanced procedure you will generally do in C++. Lucky enough the difference is just the '''mixamorig:'' prefix in each bone, so our remapping function will be super simple (and we can do it with a Blueprint)
+This is a pretty advanced procedure you will generally do in C++. Lucky enough the difference is just the '''mixamorig:'' prefix in each bone, so our remapping function will be super simple (and we can do it with a Blueprint):
 
+![Step5](RetargetingRPMAndMixamo_Data/Step5.PNG?raw=true "Step5")
 
+The Curve Remapper pin allows you to define a delegate/event/filter to rename an animation curve (that is generally named as the bone to which transformations are applied). Ensure to use the "Create Event" node when connecting the red (event) pin (we cannot use the "Add Custom Event" node as our function need to return a value).
+
+In the "Create Event" node, select the "Create a Matching Function" option to create and access you "remapper" function
+
+![Step5_RemapperBase](RetargetingRPMAndMixamo_Data/Step5_RemapperBase.PNG?raw=true "Step5_RemapperBase")
+
+Let's modify it to remove the '''mixamorig:''' prefix:
+
+![Step5_Remapper](RetargetingRPMAndMixamo_Data/Step5_Remapper.PNG?raw=true "Step5_Remapper")
