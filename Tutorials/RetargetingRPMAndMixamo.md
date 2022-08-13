@@ -5,6 +5,8 @@
 
 This Tutorial will guide you into loading a ReadyPlayerMe character at runtime and applying a Mixamo Animation over it (included root motion).
 
+The Animation is converted to a glb file using Blender, so you can load animation at runtime too.
+
 Everything will be done with Blueprints but you can obviously accomplish the same result with C++ too.
 
 We will not use the provided glTFRuntimeAssetActor but we will load everything manually to have full control (and better understanding) over the workflow.
@@ -44,8 +46,46 @@ We are going to fix the "flying avatar issue" by using the model bounds.
 
 Be prepared for a bit of spaghetti: 
 
-![Step2](RetargetingRPMAndMixamo_Data/Step1.PNG?raw=true "Step2")
+![Step2](RetargetingRPMAndMixamo_Data/Step2.PNG?raw=true "Step2")
 
 Thanks to the bounds height (the Z value, rememebr to break/split the Extent bounds pin of the GetBounds node) we can set the capsule 'Half Height' and move the SkeletalMeshComponent to the right vertical offset
 
 ![Step2_Viewport](RetargetingRPMAndMixamo_Data/Step2_Viewport.PNG?raw=true "Step2_Viewport")
+
+Ok, we are good. Time for Mixamo!
+
+## Step 3: Downloading the Mixamo animation and Converting it to GLTF
+
+Go to Mixamo and download your favourite animation. We are going to use the "manga-like" Run:
+
+![Step3_Mixamo](RetargetingRPMAndMixamo_Data/Step3_Mixamo.PNG?raw=true "Step3_Mixamo")
+
+Download it as FBX and ensure to not export the skin (we are just interested in skeleton structure and animation curves)
+
+![Step3_Download](RetargetingRPMAndMixamo_Data/Step3_Download.PNG?raw=true "Step3_Download")
+
+Now import it in blender and slide the animation timeline to check that everythng is fine (it is obviously hard to understand what is going on given that we have only bones as visual reference).
+
+![Step3_Blender](RetargetingRPMAndMixamo_Data/Step3_Blender.PNG?raw=true "Step3_Blender")
+
+If your animation has root motion, ensure that the skeleton moves too while sliding the timeline.
+
+Now export the object as gltf/glb from blender (you can use the default export settings) and prepare for the next step.
+
+## Step 4: Loading the Animation
+
+Add a new pin to the Sequence node, load the GLTF file and extract the animation from it:
+
+![Step4](RetargetingRPMAndMixamo_Data/Step4.PNG?raw=true "Step4")
+
+Oops! something went wrong:
+
+![Step4_Error](RetargetingRPMAndMixamo_Data/Step4_Error.PNG?raw=true "Step4_Error")
+
+The bones names of the Mixamo asset do not match the bones names of the RPM Avatar :(
+
+# Step 5: Bones Names Remapping
+
+This is a pretty advanced procedure you will generally do in C++. Lucky enough the difference is just the '''mixamorig:'' prefix in each bone, so our remapping function will be super simple (and we can do it with a Blueprint)
+
+
