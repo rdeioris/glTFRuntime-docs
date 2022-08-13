@@ -99,3 +99,22 @@ In the "Create Event" node, select the "Create a Matching Function" option to cr
 Let's modify it to remove the '''mixamorig:''' prefix:
 
 ![Step5_Remapper](RetargetingRPMAndMixamo_Data/Step5_Remapper.PNG?raw=true "Step5_Remapper")
+
+The errors in the Output log should now disappear, so we can play our animation by setting the AnimationData structure of the SkeletalMeshComponent and its AnimationMode:
+
+![Step5_Play](RetargetingRPMAndMixamo_Data/Step5_Play.PNG?raw=true "Step5_Play")
+
+If we hit play we will see a pretty messy situation with our Avatar being dismembered (or something similar...)
+
+# Step 6: Retargeting
+
+Retargeting is the process of converting a bone transformation based on a pose, to another one based on a different pose.
+
+The problem we are facing is that the Mixamo animation curves have been built for a specific pose (different from the RPM Avatar).
+
+Lucky enough we can easily retarget animations in glTFRuntime:
+
+![Step6](RetargetingRPMAndMixamo_Data/Step6.PNG?raw=true "Step6")
+
+By connecting the RetargetTo poin to the Skeleton object of the SkeletalMesh (the RPM one) we can now hit play again:
+
