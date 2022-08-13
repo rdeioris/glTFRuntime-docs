@@ -17,8 +17,13 @@ This is simple, we are going to use the ```LoadSkeletalMeshRecursiveAsync``` to 
 
 The result is good but no "cool":
 
-* The root bone is mapped to "Hips" instead of in the middle of the feet
-* 
+* The root bone is mapped to "Hips" instead of the middle of the feet
+
+![Step0_Skeleton](RetargetingRPMAndMixamo_Data/Step0_Skeleton.PNG?raw=true "Step0_Skeleton")
+
+* The pivot of the SkeletalMesh does not map to the base of the Character's CapsuleCollision
+
+![Step0_Viewport](RetargetingRPMAndMixamo_Data/Step0_Viewport.PNG?raw=true "Step0_Viewport")
 
 
 
