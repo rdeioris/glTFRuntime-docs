@@ -172,5 +172,7 @@ and we can turn root motion "on" in the AnimInstance:
 
 ## Final Notes
 
+![Final](RetargetingRPMAndMixamo_Data/Final.PNG?raw=true "Final")
+
 * As already said this is an advanced approach mainly useful for showing advanced glTFRuntime features
 * You can end your workflow at step 7 if you do not need root motion support
