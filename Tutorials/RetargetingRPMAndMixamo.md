@@ -1,5 +1,5 @@
 
-## Retarging Mixamo Animations for ReadyPlayerMe Avatars
+# Retarging Mixamo Animations for ReadyPlayerMe Avatars
 
 ![MixamoResult](RetargetingRPMAndMixamo_Data/MixamoResult.PNG?raw=true "MixamoResult")
 
@@ -90,7 +90,7 @@ Oops! something went wrong:
 
 The bones names of the Mixamo asset do not match the bones names of the RPM Avatar :(
 
-# Step 5: Bones Names Remapping
+## Step 5: Bones Names Remapping
 
 This is a pretty advanced procedure you will generally do in C++. Lucky enough the difference is just the '''mixamorig:'' prefix in each bone, so our remapping function will be super simple (and we can do it with a Blueprint):
 
@@ -114,7 +114,7 @@ If we hit play we will see a pretty messy situation with our Avatar being dismem
 
 ![Step5_Mess](RetargetingRPMAndMixamo_Data/Step5_Mess.PNG?raw=true "Step5_Mess")
 
-# Step 6: Retargeting
+## Step 6: Retargeting
 
 Retargeting is the process of converting a bone transformation based on a pose, to another one based on a different pose.
 
@@ -138,4 +138,12 @@ By connecting the RetargetTo pin to the Skeleton object of the SkeletalMesh (the
 
 ![Step6_ViewportFixed](RetargetingRPMAndMixamo_Data/Step6_ViewportFixed.PNG?raw=true "Step6_ViewportFixed")
 
-# Step 7: Fixing the arms
+## Step 7: Fixing the arms
+
+There is still a problem with the arms: they cross in a pretty weird way.
+
+This is caused by the mixamo animation being created for a model in T-Pose, while the RPM Avatar is in A-Pose.
+
+The fix is again pretty easy, we can add a "transformation" to every relevant curve in our animation to address the difference in default poses:
+
+
