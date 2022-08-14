@@ -162,8 +162,15 @@ Currently the root motion in our animation is still mapped to the Hips curve, le
 
 Whenever a "translation" curve is named "Hips", we move it to the "root" one.
 
-We can finally enable "RootMotion" in our animation and we turn it on in the AnimInstance:
+We can finally enable "RootMotion" and "Anim First Frame" LockMode in our animation
 
 ![Step8_RootMotion](RetargetingRPMAndMixamo_Data/Step8_RootMotion.PNG?raw=true "Step8_RootMotion")
 
+and we can turn root motion "on" in the AnimInstance:
+
 ![Step8_AnimInstance](RetargetingRPMAndMixamo_Data/Step8_AnimInstance.PNG?raw=true "Step8_AnimInstance")
+
+## Final Notes
+
+* As already said this is an advanced approach mainly useful for showing advanced glTFRuntime features
+* You can end your workflow at step 7 if you do not need root motion support
