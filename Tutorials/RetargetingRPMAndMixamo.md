@@ -64,7 +64,7 @@ Download it as FBX and ensure to not export the skin (we are just interested in 
 
 ![Step3_MixamoDownload](RetargetingRPMAndMixamo_Data/Step3_MixamoDownload.PNG?raw=true "Step3_MixamoDownload")
 
-Now import the FBX in blender (ensure to set the """Automatice Bone Orientation""" flag):
+Now import the FBX in blender (ensure to set the "Automatic Bone Orientation" flag):
 
 ![Step3_BlenderImport](RetargetingRPMAndMixamo_Data/Step3_BlenderImport.PNG?raw=true "Step3_BlenderImport")
 
