@@ -94,7 +94,7 @@ This is a pretty advanced procedure you will generally do in C++. Lucky enough t
 
 ![Step5](RetargetingRPMAndMixamo_Data/Step5.PNG?raw=true "Step5")
 
-The Curve Remapper pin allows you to define a delegate/event/filter to rename an animation curve (that is generally named as the bone to which transformations are applied). Ensure to use the "Create Event" node when connecting the red (event) pin (we cannot use the "Add Custom Event" node as our function need to return a value).
+The Curve Remapper pin allows you to define a delegate/event/filter to rename an animation curve (that is generally named as the bone to which transformations are applied). Ensure to use the "Create Event" node when connecting the red (event) pin (we cannot use the "Add Custom Event" node as our function needs to return a value).
 
 In the "Create Event" node, select the "Create a Matching Function" option to create and access you "remapper" function
 
