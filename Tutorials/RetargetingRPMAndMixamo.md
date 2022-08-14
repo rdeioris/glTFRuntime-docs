@@ -3,11 +3,11 @@
 
 ![MixamoResult](RetargetingRPMAndMixamo_Data/MixamoResult.PNG?raw=true "MixamoResult")
 
-This Tutorial will guide you into loading a ReadyPlayerMe character at runtime and applying a Mixamo Animation over it (included root motion).
+This Tutorial will guide you into loading a ReadyPlayerMe character at runtime and applying a Mixamo Animation over it (included root motion, if required).
 
-The Animation is converted to a glb file using Blender, so you can load animation at runtime too.
+The Animation is converted to a glb file using Blender, so you can load animations at runtime too.
 
-Everything will be done with Blueprints but you can obviously accomplish the same result with C++ too.
+Everything will be done with Blueprints but you can obviously accomplish the same results with C++ too.
 
 We will not use the provided glTFRuntimeAssetActor but we will load everything manually to have full control (and better understanding) over the workflow.
 
@@ -30,7 +30,7 @@ The result is good but no "cool":
 
 ## Step 1: Adding a true Root Bone
 
-Let's configure the glTFRuntme Skeleton loader to automatically add a root bone:
+Let's configure the glTFRuntime Skeleton loader to automatically add a root bone:
 
 ![Step1](RetargetingRPMAndMixamo_Data/Step1.PNG?raw=true "Step1")
 
@@ -64,7 +64,11 @@ Download it as FBX and ensure to not export the skin (we are just interested in 
 
 ![Step3_Download](RetargetingRPMAndMixamo_Data/Step3_Download.PNG?raw=true "Step3_Download")
 
-Now import it in blender and slide the animation timeline to check that everythng is fine (it is obviously hard to understand what is going on given that we have only bones as visual reference).
+Now import the FBX in blender (ensure to set the """Automatice Bone Orientation""" flag):
+
+![Step3_BlenderImport](RetargetingRPMAndMixamo_Data/Step3_BlenderImport.PNG?raw=true "Step3_BlenderImport")
+
+And now slide the animation timeline to check that everythng is fine (it is obviously hard to understand what is going on given that we have only bones as visual reference).
 
 ![Step3_Blender](RetargetingRPMAndMixamo_Data/Step3_Blender.PNG?raw=true "Step3_Blender")
 
