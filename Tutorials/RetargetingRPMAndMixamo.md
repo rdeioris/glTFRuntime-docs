@@ -120,7 +120,7 @@ Retargeting is the process of converting a bone transformation based on a pose, 
 
 The problem we are facing is that the Mixamo animation curves have been built for a specific pose (different from the RPM Avatar).
 
-Lucky enough we can easily retarget animations in glTFRuntime, but before doing this we need to address the scaling of the animation (unfortunately when exporting from an FBX, blender will scale everything by 100)
+Lucky enough we can easily retarget animations in glTFRuntime, but before doing this we need to address the scaling of the animation (unfortunately when exporting from an FBX, blender will scale everything by 100, so we set the SceneScale value to '1')
 
 ![Step6_Scale](RetargetingRPMAndMixamo_Data/Step6_Scale.PNG?raw=true "Step6_Scale")
 
