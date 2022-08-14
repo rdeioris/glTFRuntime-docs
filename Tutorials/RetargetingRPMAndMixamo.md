@@ -137,3 +137,5 @@ By connecting the RetargetTo pin to the Skeleton object of the SkeletalMesh (the
  we can now hit play again:
 
 ![Step6_ViewportFixed](RetargetingRPMAndMixamo_Data/Step6_ViewportFixed.PNG?raw=true "Step6_ViewportFixed")
+
+# Step 7: Fixing the arms
