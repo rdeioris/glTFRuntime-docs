@@ -11,6 +11,8 @@ Everything will be done with Blueprints but you can obviously accomplish the sam
 
 We will not use the provided glTFRuntimeAssetActor but we will load everything manually to have full control (and better understanding) over the workflow.
 
+Note: those steps are pretty advanced and generally you do not need to follow them if the animations are fully GLTF compliant and compatible with your mesh skeleton.
+
 ## Step 0: Loading the RPM Avatar
 
 This is simple, we are going to use the ```LoadSkeletalMeshRecursiveAsync``` to compact the whole RPM Avatar in a single SkeletalMesh (instead of a hierarchy of multiple SkeletalMeshes) and we assign it to an empty Character placed in the level:
@@ -110,15 +112,28 @@ The errors in the Output log should now disappear, so we can play our animation 
 
 If we hit play we will see a pretty messy situation with our Avatar being dismembered (or something similar...)
 
+![Step5_Mess](RetargetingRPMAndMixamo_Data/Step5_Mess.PNG?raw=true "Step5_Mess")
+
 # Step 6: Retargeting
 
 Retargeting is the process of converting a bone transformation based on a pose, to another one based on a different pose.
 
 The problem we are facing is that the Mixamo animation curves have been built for a specific pose (different from the RPM Avatar).
 
-Lucky enough we can easily retarget animations in glTFRuntime:
+Lucky enough we can easily retarget animations in glTFRuntime, but before doing this we need to address the scaling of the animation (unfortunately when exporting from an FBX, blender will scale everything by 100)
+
+![Step6_Scale](RetargetingRPMAndMixamo_Data/Step6_Scale.PNG?raw=true "Step6_Scale")
+
+Let's try again:
+
+![Step6_Viewport](RetargetingRPMAndMixamo_Data/Step6_Viewport.PNG?raw=true "Step6_Viewport")
+
+Ok, visible, but definitely wrong, let's retarget the animation!
+
+By connecting the RetargetTo pin to the Skeleton object of the SkeletalMesh (the RPM one) the animation curves will be converted for the new skeleton:
 
 ![Step6](RetargetingRPMAndMixamo_Data/Step6.PNG?raw=true "Step6")
 
-By connecting the RetargetTo poin to the Skeleton object of the SkeletalMesh (the RPM one) we can now hit play again:
+ we can now hit play again:
 
+![Step6_ViewportFixed](RetargetingRPMAndMixamo_Data/Step6_ViewportFixed.PNG?raw=true "Step6_ViewportFixed")
