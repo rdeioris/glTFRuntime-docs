@@ -158,6 +158,12 @@ Great, the arms are fixed and theoretically if you animation has no root motion,
 
 Currently the root motion in our animation is still mapped to the Hips curve, let's move it to the "root" bone by editing our curve remapper function (the one we previously created for removing the "mixamorig:" prefix):
 
+![Step8](RetargetingRPMAndMixamo_Data/Step8.PNG?raw=true "Step8")
 
+Whenever a "translation" curve is named "Hips", we move it to the "root" one.
 
+We can finally enable "RootMotion" in our animation and we turn it on in the AnimInstance:
 
+![Step8_RootMotion](RetargetingRPMAndMixamo_Data/Step8_RootMotion.PNG?raw=true "Step8_RootMotion")
+
+![Step8_AnimInstance](RetargetingRPMAndMixamo_Data/Step8_AnimInstance.PNG?raw=true "Step8_AnimInstance")
