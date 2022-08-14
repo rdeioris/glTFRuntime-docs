@@ -62,7 +62,7 @@ Go to Mixamo and download your favourite animation. We are going to use the "man
 
 Download it as FBX and ensure to not export the skin (we are just interested in skeleton structure and animation curves)
 
-![Step3_Download](RetargetingRPMAndMixamo_Data/Step3_Download.PNG?raw=true "Step3_Download")
+![Step3_MixamoDownload](RetargetingRPMAndMixamo_Data/Step3_MixamoDownload.PNG?raw=true "Step3_MixamoDownload")
 
 Now import the FBX in blender (ensure to set the """Automatice Bone Orientation""" flag):
 
