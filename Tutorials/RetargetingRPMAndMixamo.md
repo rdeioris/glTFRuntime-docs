@@ -146,4 +146,18 @@ This is caused by the mixamo animation being created for a model in T-Pose, whil
 
 The fix is again pretty easy, we can add a "transformation" to every relevant curve in our animation to address the difference in default poses:
 
+![Step7](RetargetingRPMAndMixamo_Data/Step7.PNG?raw=true "Step7")
+
+Hit play again:
+
+![Step7_Viewport](RetargetingRPMAndMixamo_Data/Step7_Viewport.PNG?raw=true "Step7_Viewport")
+
+Great, the arms are fixed and theoretically if you animation has no root motion, you could end your worflow here.
+
+## (Optional) Step 8: Root Motion
+
+Currently the root motion in our animation is still mapped to the Hips curve, let's move it to the "root" bone by editing our curve remapper function (the one we previously created for removing the "mixamorig:" prefix):
+
+
+
 
