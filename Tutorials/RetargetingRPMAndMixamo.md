@@ -104,7 +104,7 @@ In the "Create Event" node, select the "Create a Matching Function" option to cr
 
 ![Step5_RemapperBase](RetargetingRPMAndMixamo_Data/Step5_RemapperBase.PNG?raw=true "Step5_RemapperBase")
 
-Let's modify it to remove the '''mixamorig:''' prefix:
+Let's modify it to remove the '''mixamorig:''' prefix (or mixamorig10, or whatever is the bone prefix for the asset):
 
 ![Step5_Remapper](RetargetingRPMAndMixamo_Data/Step5_Remapper.PNG?raw=true "Step5_Remapper")
 
