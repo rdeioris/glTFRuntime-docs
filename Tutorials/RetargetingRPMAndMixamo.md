@@ -13,6 +13,8 @@ We will not use the provided glTFRuntimeAssetActor but we will load everything m
 
 Note: those steps are pretty advanced and generally you do not need to follow them if the animations are fully GLTF compliant and compatible with your mesh skeleton.
 
+Mixamo Note: based on the selected character you may end with a different scheletal structure. Using the "David" character is highly suggested (i always had good results with it)
+
 ## Step 0: Loading the RPM Avatar
 
 This is simple, we are going to use the ```LoadSkeletalMeshRecursiveAsync``` to compact the whole RPM Avatar in a single SkeletalMesh (instead of a hierarchy of multiple SkeletalMeshes) and we assign it to an empty Character placed in the level:
@@ -92,7 +94,7 @@ The bones names of the Mixamo asset do not match the bones names of the RPM Avat
 
 ## Step 5: Bones Names Remapping
 
-This is a pretty advanced procedure you will generally do in C++. Lucky enough the difference is just the '''mixamorig:'' prefix in each bone, so our remapping function will be super simple (and we can do it with a Blueprint):
+This is a pretty advanced procedure you will generally do in C++. Lucky enough the difference is just the '''mixamorig:'' (or '''mixamorig10:''' if you are using David) prefix in each bone, so our remapping function will be super simple (and we can do it with a Blueprint):
 
 ![Step5](RetargetingRPMAndMixamo_Data/Step5.PNG?raw=true "Step5")
 
