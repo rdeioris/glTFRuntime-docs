@@ -13,7 +13,7 @@ We will not use the provided glTFRuntimeAssetActor but we will load everything m
 
 Note: those steps are pretty advanced and generally you do not need to follow them if the animations are fully GLTF compliant and compatible with your mesh skeleton.
 
-Mixamo Note: based on the selected character you may end with a different scheletal structure. Using the "David" character is highly suggested (i always had good results with it)
+Mixamo Note: based on the selected character you may end with a different scheletal structure. Using the "David" character is highly suggested (I always had good results with it ;)
 
 ## Step 0: Loading the RPM Avatar
 
@@ -177,4 +177,5 @@ and we can turn root motion "on" in the AnimInstance:
 ![Final](RetargetingRPMAndMixamo_Data/Final.PNG?raw=true "Final")
 
 * As already said this is an advanced approach mainly useful for showing advanced glTFRuntime features
+* Some of the Mixamo characters works bad given that their bone pose references are way different from the RPM skeleton
 * You can end your workflow at step 7 if you do not need root motion support
