@@ -98,9 +98,13 @@ The pelvis (and the head) are now correct (gien that we have copied the rotation
 
 We need to change the behaviour of the bones remapper, to just map 'unmapped' bones to the first valid parent (so the spine_01, spine_02 and so on will be mapped to pelvis given that it is the first valid parent).
 
-We have a simple boolean option for adding this behaviour (Assigned Unmapped Bones to Parent):
+We have a simple boolean option for adding this behaviour (Assign Unmapped Bones to Parent):
 
 ![Step3_BP_Fix2](SkeletonRemapping_Data/Step3_BP_Fix2.PNG?raw=true "Step3_BP_Fix2")
+
+We will end now with our Character having just a root and a pelvis (the only two 'valid' bones in the hierarchy after the remapping):
+
+![Step3_Viewport_FixedRot](SkeletonRemapping_Data/Step3_Viewport_FixedRot.PNG?raw=true "Step3_Viewport_FixedRot")
 
 ## Step 4: Remapping bones with JSON
 ```json
