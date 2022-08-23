@@ -266,4 +266,11 @@ Given that 'holes in the hierarchy' are not allowed, we need to map the missing 
 
 As you can see, the value of each bone mapping can contains multiple comma separated targets. This special feature instructs glTFRuntime to add more bones to the same key.
 
+Unfortunately the Manny animations do not match very well with the ReadyPlayerMe Character, so do not expect a great result.
+
 ## Final Notes
+
+* Try to abuse the "extras" object in your GLTF/JSON files. There are nodes for extracting numbers, strings, array of strings and booleans (in addition to the string dictionary we have already seen)
+* The Mannequin pose has the arms in a slightly different configuration in respect to the ReadPlayerMe Character (about 10 degrees on the Y axis). You can add two 'Transform Bone' nodes for the upperams in the Animation Blueprint to fix this (consider adding the 10 degrees information in an 'extras' object)
+* The height of the ReadyPlayerMe Character is different, so consider using its bounds to fix the capsule height and the SkeletalMeshComponent Z position
+* Probably the feet of the ReadyPlayerMe Character will be a bit under the platforms: add a delta to the SkeletalMeshComponent Z value (you could base it on the shoes height)
