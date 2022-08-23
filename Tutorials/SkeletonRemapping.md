@@ -8,7 +8,29 @@ The goal is to completely substitute the original Unreal model with the glb one 
 
 ## Step 0: Loading the ReadyPlayerMe model into the Character's SkeletalMeshComponent
 
+This is probably a very easy step (something you may have done dozens of time while playing with glTFRuntime): you get a reference to the character in your level blueprint and assign a new SkeletalMesh to it.
+
+The SkeletalMesh is a gltf asset loaded recursively (to end with a single SkeletalMesh)
+
+![Step0_BP](SkeletonRemapping_Data/Step0_BP.PNG?raw=true "Step0_BP")
+
+The model will be loaded correctly:
+
+![Step0_SM](SkeletonRemapping_Data/Step0_SM.PNG?raw=true "Step0_SM")
+
+...but in the viewport it is in T-Pose (instead of being animated) and it is facing the wrong direction
+
+![Step0_Viewport](SkeletonRemapping_Data/Step0_Viewport.PNG?raw=true "Step0_Viewport")
+
 ## Step 1: Fixing the SkeletalMesh Forward
+
+The wrong facing issue is caused by the Unreal convention of having the Character's forward vector pointing along the Y (instead of the X). This is a bit annoying but lucky enough we can quickly instruct the glTFRuntime loader to automatically assume the Y is the forward vector:
+
+![Step1_BP](SkeletonRemapping_Data/Step1_BP.PNG?raw=true "Step1_BP")
+
+Now the Character should point in the right direction (but still in T-Pose)
+
+![Step1_Viewport](SkeletonRemapping_Data/Step1_Viewport.PNG?raw=true "Step1_Viewport")
 
 ## Step 2: Assigning the Mannequin Skeleton
 
