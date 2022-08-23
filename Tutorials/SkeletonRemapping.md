@@ -88,7 +88,7 @@ Nope:
 
 We have the right name for the bone, but the animations assume the base pose of a model (read: the SkeletonRef) has a very specific rotations configuration (while positions can be different).
 
-Lucky enough we can copy rotations from a Skeleton Asset to our SkeletonRef:
+Lucky enough we can copy rotations from a Skeleton Asset to our SkeletonRef (withe CopyRotationsFrom field):
 
 ![Step3_BP_Fix](SkeletonRemapping_Data/Step3_BP_Fix.PNG?raw=true "Step3_BP_Fix")
 
@@ -96,7 +96,7 @@ The pelvis (and the head) are now correct (gien that we have copied the rotation
 
 ![Step3_Viewport_BrokenRot](SkeletonRemapping_Data/Step3_Viewport_BrokenRot.PNG?raw=true "Step3_Viewport_BrokenRot")
 
-We need to change the behaviour of the bones remapper, to just map 'unmapped' bones to the first valid parent (so the spine_01, spine_02 and so on will be mapped to pelvis given that it is the first valid parent).
+We need to change the behaviour of the bones remapper to just map 'unmapped' bones to the first valid parent (so the spine_01, spine_02 and so on will be mapped to pelvis given that it is the first valid parent).
 
 We have a simple boolean option for adding this behaviour (Assign Unmapped Bones to Parent):
 
