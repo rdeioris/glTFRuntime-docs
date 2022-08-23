@@ -66,7 +66,7 @@ Yep!
 
 ## Step 3: Fixing the SkeletonRef
 
-Unfortunately we are in a pretty broken situation: the SkeletonRef has a completely different hierarchy in respect of the one of the Mannequin and, more important, from the Skeleton Asset we assigned. But why the head is animated?
+Unfortunately we are in a pretty broken situation: the SkeletonRef has a completely different hierarchy in respect to the one of the Mannequin and, more important, from the Skeleton Asset we assigned. But why the head is animated?
 
 Let's look at the Mannequin structure:
 
