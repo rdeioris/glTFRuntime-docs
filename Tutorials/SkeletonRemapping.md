@@ -50,6 +50,14 @@ OOps something bad happened!
 
 ![Step2_Viewport](SkeletonRemapping_Data/Step2_Viewport.PNG?raw=true "Step2_Viewport")
 
+(please notice that the head is moving!)
+
+The problem here is that the ReadyPlayerMe model has the root bone in the pelvis, while the Mannequin in the middle of the feet.
+
+Let's fix this by adding a root bone:
+
+![Step2_BP_Fix](SkeletonRemapping_Data/Step2_BP_Fix.PNG?raw=true "Step2_BP_Fix")
+
 ## Step 3: Fixing the SkeletonRef
 
 ## Step 4: Remapping bones with JSON
