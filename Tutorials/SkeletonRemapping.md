@@ -6,6 +6,14 @@ The goal is to completely substitute the original Unreal model with the glb one 
 
 ![Result](SkeletonRemapping_Data/Intro.PNG?raw=true "Result")
 
+## Step 0: Loading the ReadyPlayerMe model into the Character's SkeletalMeshComponent
+
+## Step 1:
+
+## Step 2:
+
+## Step 3:
+
 ## Step 4: Remapping bones with JSON
 ```json
 {
