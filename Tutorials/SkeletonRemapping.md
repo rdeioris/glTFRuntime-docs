@@ -18,7 +18,7 @@ The model will be loaded correctly:
 
 ![Step0_SM](SkeletonRemapping_Data/Step0_SM.PNG?raw=true "Step0_SM")
 
-...but in the viewport it is in T-Pose (instead of being animated) and it is facing the wrong direction
+...but in the viewport it is in A-Pose (instead of being animated) and it is facing the wrong direction
 
 ![Step0_Viewport](SkeletonRemapping_Data/Step0_Viewport.PNG?raw=true "Step0_Viewport")
 
@@ -28,7 +28,7 @@ The wrong facing issue is caused by the Unreal convention of having the Characte
 
 ![Step1_BP](SkeletonRemapping_Data/Step1_BP.PNG?raw=true "Step1_BP")
 
-Now the Character should point in the right direction (but still in T-Pose)
+Now the Character should point in the right direction (but still in A-Pose)
 
 ![Step1_Viewport](SkeletonRemapping_Data/Step1_Viewport.PNG?raw=true "Step1_Viewport")
 
