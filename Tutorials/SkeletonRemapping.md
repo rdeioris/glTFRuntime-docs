@@ -107,6 +107,11 @@ We will end now with our Character having just a root and a pelvis (the only two
 ![Step3_Viewport_FixedRot](SkeletonRemapping_Data/Step3_Viewport_FixedRot.PNG?raw=true "Step3_Viewport_FixedRot")
 
 ## Step 4: Remapping bones with JSON
+
+You could obviously start filling the Blueprint Map for the bones remapping manually, but honestly its a very annoying procedure. Instead I will show you a more 'developer-friendly' approach: let's define the mapping in the asset itself!
+
+Well, instead of editing (and possibly breaking) the ReadyPlayerMe asset, i am going to create a new gltf (json) file with just the informations we need. We will load it independently (and at runtime). But feel free to embed the 'extras' object in your asset.
+
 ```json
 {
 	"extras":
@@ -175,13 +180,21 @@ We will end now with our Character having just a root and a pelvis (the only two
 }
 ````
 
+For glTFRuntime this is a valid GLTF file, so we can load it and use the low-level api for accessing the JSON informations:
+
+![Step4_BP](SkeletonRemapping_Data/Step4_BP.PNG?raw=true "Step4_BP")
+
+If the mapping is correct you will see your ReadyPlayerMe Character using the Mannequin animations:
+
+![Step4_Viewport](SkeletonRemapping_Data/Step4_Viewport.PNG?raw=true "Step4_Viewport")
+
 ## Step 5: More complex remapping: UE5 Manny
 
 The UE5 Manny Character has a more complex (and somewhat incompatible) Skeleton structure. The main issue is the different hierarchy (check the spine bones).
 
 ![Manny](SkeletonRemapping_Data/Step5_Manny.PNG?raw=true "Manny")
 
-Given that 'holes in the hierarchy' are not allowed, we need to map the missing bones (like spine_04 and spine_05) to a valid parent bone (like spine_03) and assigning them an identity (empty) Transform:
+Given that 'holes in the hierarchy' are not allowed, we need to map the missing bones (like spine_04 and spine_05) to a valid parent bone (like spine_03) and assign them an identity (empty) Transform:
 
 ```json
 {
@@ -251,6 +264,6 @@ Given that 'holes in the hierarchy' are not allowed, we need to map the missing 
 }
 ```
 
-As you can see, the value of each bone mapping can constains multiple comma separated targets. This special feature instructs glTFRuntime to add more bones to the same key.
+As you can see, the value of each bone mapping can contains multiple comma separated targets. This special feature instructs glTFRuntime to add more bones to the same key.
 
 ## Final Notes
