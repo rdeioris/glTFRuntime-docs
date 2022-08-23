@@ -4,6 +4,8 @@ In this tutorial we are going to reuse the Mannequin Animation Blueprint with a 
 
 The goal is to completely substitute the original Unreal model with the glb one without losing animations: this involves assigning a specific Skeleton asset to the ReadyPlayerMe SkeletalMesh
 
+![Result](SkeletonRemapping_Data/Intro.PNG?raw=true "Result")
+
 ## Step 4: Remapping bones with JSON
 ```json
 {
