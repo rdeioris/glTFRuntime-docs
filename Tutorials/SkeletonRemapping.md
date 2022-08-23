@@ -86,7 +86,7 @@ Nope:
 
 ![Step3_Viewport](SkeletonRemapping_Data/Step3_Viewport.PNG?raw=true "Step3_Viewport")
 
-We have the right name for the bone, but the animations assume the base pose of a model (read: the SkeletonRef) has a very specific roations configurations (while positions can be different).
+We have the right name for the bone, but the animations assume the base pose of a model (read: the SkeletonRef) has a very specific rotations configuration (while positions can be different).
 
 Lucky enough we can copy rotations from a Skeleton Asset to our SkeletonRef:
 
