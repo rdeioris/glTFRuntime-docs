@@ -2,13 +2,13 @@
 
 In this tutorial we are going to reuse the Mannequin Animation Blueprint with a GLTF SkeletalMesh (A ReadyPlayerMe character)
 
-The goal is to completely substitute the original Unreal model with the glb one without losing animations: this involves assigning a specific Skeleton asset to the ReadyPlayerMe SkeletalMesh
+The goal is to completely substitute the original Unreal model with the GLTF/GLB one without losing animations: this involves assigning a specific Skeleton asset to the ReadyPlayerMe SkeletalMesh
 
 ![Result](SkeletonRemapping_Data/Intro.PNG?raw=true "Result")
 
 ## Step 0: Loading the ReadyPlayerMe model into the Character's SkeletalMeshComponent
 
-This is probably a very easy step (something you may have done dozens of time while playing with glTFRuntime): you get a reference to the character in your level blueprint and assign a new SkeletalMesh to it.
+This is probably a very easy step (something you may have done dozens of times while playing with glTFRuntime): you get a reference to the character in your level blueprint and assign a new SkeletalMesh to it.
 
 The SkeletalMesh is a gltf asset loaded recursively (to end with a single SkeletalMesh)
 
