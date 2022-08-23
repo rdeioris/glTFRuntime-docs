@@ -50,7 +50,7 @@ OOps something bad happened!
 
 ![Step2_Viewport](SkeletonRemapping_Data/Step2_Viewport.PNG?raw=true "Step2_Viewport")
 
-(please notice that the head is moving!)
+(please notice that the head is animated!)
 
 The problem here is that the ReadyPlayerMe model has the root bone in the pelvis, while the Mannequin in the middle of the feet.
 
@@ -58,7 +58,29 @@ Let's fix this by adding a root bone:
 
 ![Step2_BP_Fix](SkeletonRemapping_Data/Step2_BP_Fix.PNG?raw=true "Step2_BP_Fix")
 
+Yep!
+
+![Step2_Viewport_Fix](SkeletonRemapping_Data/Step2_Viewport_Fix.PNG?raw=true "Step2_Viewport_Fix")
+
+(please continue noticing the head is animated!)
+
 ## Step 3: Fixing the SkeletonRef
+
+Unfortunately we are in a pretty broken situation: the SkeletonRef has a completely different hierarchy in respect of the one of the Mannequin and, more important, from the Skeleton Asset we assigned. But why the head is animated?
+
+Let's look at the Mannequin structure:
+
+![Step3_SM](SkeletonRemapping_Data/Step3_SM.PNG?raw=true "Step3_SM")
+
+it looks pretty different compared to the ReadyPlayerMe, but there is a bone with a matching name: the head!
+
+Yes, the animation curves will be applied to all of those Bones in the Skeleton Asset that exists in the SkeletonRef.
+
+This means that if we could rename the bones of the ReadyPlayerMe Character we should be able to see it animated.
+
+Let's try remapping 'Hips' to 'pelvis':
+
+![Step3_BP_Fix](SkeletonRemapping_Data/Step3_BP_Fix.PNG?raw=true "Step3_BP_Fix")
 
 ## Step 4: Remapping bones with JSON
 ```json
