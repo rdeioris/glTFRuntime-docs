@@ -85,6 +85,12 @@ The goal is to completely substitute the original Unreal model with the glb one 
 
 ## Step 5: More complex remapping: UE5 Manny
 
+The UE5 Manny Character has a more complex (and somewhat incompatible) Skeleton structure. The main issue is the different hierarchy (check the spine bones).
+
+![Manny](SkeletonRemapping_Data/Step5_Manny.PNG?raw=true "Manny")
+
+Given that 'holes in the hierarchy' are not allowed, we need to map the missing bones (like spine_04 and spine_05) to a valid parent bone (like spine_03) and assigning them an identity (empty) Transform:
+
 ```json
 {
 	"extras":
@@ -152,3 +158,7 @@ The goal is to completely substitute the original Unreal model with the glb one 
 	}
 }
 ```
+
+As you can see, the value of each bone mapping can constains multiple comma separated targets. This special feature instructs glTFRuntime to add more bones to the same key.
+
+## Final Notes
