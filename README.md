@@ -331,8 +331,8 @@ Just remember a bunch of notes:
 
 # Commercial Support
 
-Commercial support is offered by Unbit (Rome, Italy).
-Just enter the discord server and direct message the admin, or drop a mail to info at unbit dot it
+Commercial support is offered by Blitter (Rome, Italy).
+Just enter the discord server and direct message the admin, or drop a mail to info at blitter dot studio
 
 # Credits
 
