@@ -40,7 +40,7 @@ Official sources available at https://github.com/rdeioris/glTFRuntime
 * Async StaticMesh and SkeletalMesh loading
 * Support for KHR_materials_variants
 
-Platforms supported are: Win64, Linux, Mac, Android, iOS
+Platforms supported are: Win64, Linux, Mac, Android, iOS, Linux Arm64 and Hololens2
 
 Both UnrealEngine 4 and 5 are supported.
 
