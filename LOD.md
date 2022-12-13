@@ -26,6 +26,8 @@ Notice how you can specify the LOD ScreenSize using the StaticMeshConfig structu
 
 ## Combine multiple meshes from the multiple assets
 
+![RuntimeLODs](Docs/Assets/RuntimeLOD.png?raw=true "RuntimeLODs")
+
 ## Notes:
 
 if a lower LOD does not specify a material, it will inherit the first available one in the same section of a higher LOD (if available)
