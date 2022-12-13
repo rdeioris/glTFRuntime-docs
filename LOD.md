@@ -26,7 +26,7 @@ Notice how you can specify the LOD ScreenSize using the StaticMeshConfig structu
 
 ## Combine multiple meshes from the multiple assets
 
-![RuntimeLODs](Docs/Assets/RuntimeLOD.png?raw=true "RuntimeLODs")
+![RuntimeLODs](Docs/Assets/RuntimeLODs.png?raw=true "RuntimeLODs")
 
 ## Notes:
 
