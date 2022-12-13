@@ -39,6 +39,8 @@ Official sources available at https://github.com/rdeioris/glTFRuntime
 * Support for KHR_mesh_quantization
 * Async StaticMesh and SkeletalMesh loading
 * Support for KHR_materials_variants
+* Support for EXT_mesh_gpu_instancing
+* Support for MSFT_lod
 
 Platforms supported are: Win64, Linux, Mac, Android, iOS, Linux Arm64 and Hololens2
 
@@ -322,10 +324,7 @@ Just remember a bunch of notes:
 
 # TODO/WIP
 
-* LODs
 * Import Scenes as Sequencer Assets
-* Instancing Extension (https://github.com/KhronosGroup/glTF/blob/master/extensions/2.0/Vendor/EXT_mesh_gpu_instancing/README.md)
-* MSFT_lod extension (https://github.com/KhronosGroup/glTF/blob/master/extensions/2.0/Vendor/MSFT_lod/README.md)
 * More merge features
 * Support up to 12 bone/joint influences
 
