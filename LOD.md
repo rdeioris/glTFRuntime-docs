@@ -18,6 +18,11 @@ This will create a new asset called lods.glb with the cube as the LOD0 (with scr
 
 ## Combine multiple meshes from the same asset
 
+Here we are going to use the LoadStaticMeshLODs that takes an array of mesh indices as input (you obviously need to know which one to use)
+
+![LoadStaticMeshLODs](LoadStaticMeshLODs.png?raw=true "LoadStaticMeshLODs")
+
+Notice how you can specify the LOD ScreenSize using the StaticMeshConfig structure
 
 ## Combine multiple meshes from the multiple assets
 
