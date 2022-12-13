@@ -20,7 +20,7 @@ This will create a new asset called lods.glb with the cube as the LOD0 (with scr
 
 Here we are going to use the LoadStaticMeshLODs that takes an array of mesh indices as input (you obviously need to know which one to use)
 
-![LoadStaticMeshLODs](LoadStaticMeshLODs.png?raw=true "LoadStaticMeshLODs")
+![LoadStaticMeshLODs](Docs/Assets/LoadStaticMeshLODs.png?raw=true "LoadStaticMeshLODs")
 
 Notice how you can specify the LOD ScreenSize using the StaticMeshConfig structure
 
