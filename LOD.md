@@ -16,6 +16,8 @@ WindowsMRAssetConverter.exe cube.glb -o lods.glb -lod sphere.glb -screen-coverag
 
 This will create a new asset called lods.glb with the cube as the LOD0 (with screen percentage between max and 0.4) and sphere.glb as LOD1 (with screen percentage between 0.4 and 0.1).
 
+MSFT_lod is automatically honoured when using the AglTFRuntimeAssetActor
+
 ## Combine multiple meshes from the same asset (StaticMeshes and SkeletalMeshes)
 
 Here we are going to use the LoadStaticMeshLODs (or LoadSkeletalMeshLODs) that takes an array of mesh indices as input (you obviously need to know which one to use)
