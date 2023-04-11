@@ -41,6 +41,7 @@ Official sources available at https://github.com/rdeioris/glTFRuntime
 * Support for KHR_materials_variants
 * Support for EXT_mesh_gpu_instancing
 * Support for MSFT_lod
+* Support for KHR_materials_clearcoat
 
 Platforms supported are: Win64, Linux, Mac, Android, iOS, Linux Arm64 and Hololens2
 
