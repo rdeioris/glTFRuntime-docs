@@ -51,3 +51,6 @@ To automatically generate Mips, you need to enable the ```bGeneratesMips``` flag
 
 To automatically load Mips (if the format exposes them), you need to enable the ```bLoadMips``` flag in the Materials Config structure:
 
+## Texture Compression
+
+## Cubemaps
