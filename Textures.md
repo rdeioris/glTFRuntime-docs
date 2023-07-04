@@ -36,7 +36,7 @@ UTextureCube* LoadCubeMapFromBlob(const bool bSpherical, const bool bAutoRotate,
 UTexture2DArray* LoadImageArrayFromBlob(const FglTFRuntimeImagesConfig& ImagesConfig);
 ```
 
-Image indices are related to the gltf asset (so you may want to iterate them, the ```int32 GetNumImages() const`` method will help in this).
+Image indices are related to the gltf asset (so you may want to iterate them, the ```int32 GetNumImages() const``` method will help in this).
 Blob is meant for assets directly loaded from a file or a url:
 
 ## MipMaps
