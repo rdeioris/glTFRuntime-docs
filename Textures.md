@@ -79,15 +79,37 @@ The result will be a DXT5 compressed texture.
 
 ## Textures array
 
+This is (as the name implies) a list of images in the same texture. From a technical point of view you can "sample" them with 3 values instead of the classic 2 (UV).
+
+The third value is the index in the textures array.
+
+They are used for various tricks, but generally (for lower level implementations) they allow to reduce the impact of switching textures in each shader (the amount of usable textures in a shader can be limited).
+
 ## Cubemaps
 
 Cubemaps are a special form of textures array: they are formed by 6 square images.
 
 Each one of the images represents a face of a virtual cube. Those specific kind of textures are used for skyboxes and for images based lighting (included reflection captures).
 
+Unreal expects those 6 images with a very special layout:
+
+![CubeMap](Docs/Screenshots/Textures005.png?raw=true "CubeMap")
+
 Cubemap images can be stored as 6 different images, or as a single one including all of them projected in a single spherical image:
 
-glTFRuntime supports loading cubemaps from both of the image types:
+![Spherical](Docs/Screenshots/Textures006.png?raw=true "Spherical")
+
+(thanks to Epic Games for the 2 example images)
+
+glTFRuntime supports loading cubemaps from both of the image types.
+
+This is an example of loading an EXR 2k image from https://polyhaven.com/hdris:
+
+![CubeMapFromBlob](Docs/Screenshots/Textures007.png?raw=true "CubeMapFromBlob")
+
+And the result:
+
+![CubeMapTexture](Docs/Screenshots/Textures008.png?raw=true "CubeMapTexture")
 
 ## WIP: Streaming and Virtual Texturing
 
