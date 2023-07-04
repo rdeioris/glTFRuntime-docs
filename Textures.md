@@ -66,4 +66,16 @@ Eventually you may want to automatically compress linear formats (like BGRA8) to
 
 The result will be a DXT5 compressed texture.
 
+## Textures array
+
 ## Cubemaps
+
+Cubemaps are a special form of textures array: they are formed by 6 square images.
+
+Each one of the images represents a face of a virtual cube. Those specific kind of textures are used for skyboxes and for images based lighting (included reflection captures).
+
+Cubemap images can be stored as 6 different images, or as a single one including all of them projected in a single spherical image:
+
+glTFRuntime supports loading cubemaps from both of the image types:
+
+
