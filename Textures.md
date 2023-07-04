@@ -39,7 +39,7 @@ UTexture2DArray* LoadImageArrayFromBlob(const FglTFRuntimeImagesConfig& ImagesCo
 Image indices are related to the gltf asset (so you may want to iterate them, the ```int32 GetNumImages() const``` method will help in this).
 Blob is meant for assets directly loaded from a file or a url:
 
-![Blob](Docs/Screenshots/Textures000.PNG?raw=true "Blob")
+![Blob](Docs/Screenshots/Textures000.png?raw=true "Blob")
 
 ## MipMaps
 
@@ -50,11 +50,11 @@ The default behaviour of glTFRuntime is to have a single Mip for each texture, b
 
 To automatically generate Mips, you need to enable the ```bGeneratesMipMaps``` flag in the Materials Config structure:
 
-![GenerateMips](Docs/Screenshots/Textures001.PNG?raw=true "GenerateMips")
+![GenerateMips](Docs/Screenshots/Textures001.png?raw=true "GenerateMips")
 
 To automatically load Mips (if the format exposes them), you need to enable the ```bLoadMipMaps``` flag in the Materials Config structure:
 
-![LoadMips](Docs/Screenshots/Textures002.PNG?raw=true "LoadMips")
+![LoadMips](Docs/Screenshots/Textures002.png?raw=true "LoadMips")
 
 ## Texture Compression
 
@@ -69,11 +69,11 @@ If your image format supports one of those compression system (DXT5 or BC7 gener
 
 This is the result of loading the offigial Khronos sample of the "FlightHelmet" with the KTX2 extension (https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/FlightHelmet/glTF-KTX-BasisU):
 
-![KTX2](Docs/Screenshots/Textures003.PNG?raw=true "KTX2")
+![KTX2](Docs/Screenshots/Textures003.png?raw=true "KTX2")
 
 Eventually you may want to automatically compress linear formats (like BGRA8) to compressed ones. You can do it by using the https://github.com/rdeioris/glTFRuntimeSTBImage plugin and enabling the bCompressMips flag in the Images config structure:
 
-![DXT](Docs/Screenshots/Textures004.PNG?raw=true "DXT")
+![DXT](Docs/Screenshots/Textures004.png?raw=true "DXT")
 
 The result will be a DXT5 compressed texture.
 
