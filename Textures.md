@@ -53,4 +53,17 @@ To automatically load Mips (if the format exposes them), you need to enable the 
 
 ## Texture Compression
 
+While image formats often imply some form of compression (like PNG and JPEG), those data are uploaded uncompressed to the GPU.
+
+A 1024x1024 image in BGRA8 format will occupy 4MBs of precious GPU memory. A 4K texture will use 64MBs!
+
+Lucky enough GPUs supports uploading image data in a (lossy) compressed format. The most common (at least on desktop operating systems) is the DXT/STC3 format.
+
+If your image format supports one of those compression system (DXT5 or BC7 generally, both available in KTX2 and DDS formats) that data will be automatically uploaded to the GPU
+(dramatically reducing the amount of used memory).
+
+Eventually you may want to automatically compress linear formats (like BGRA8) to compressed ones. You can do it by using the https://github.com/rdeioris/glTFRuntimeSTBImage plugin and enabling the bCompressMips flag in the Images config structure:
+
+The result will be a DXT5 compressed texture.
+
 ## Cubemaps
