@@ -93,6 +93,16 @@ glTFRuntime supports loading cubemaps from both of the image types:
 
 As we have seen GPU memory usage is one of the most critical part when working with textures. Those problems are often amplified when doing runtime loading.
 
-To reduce the amount of used GPU memory (especially for very big levels with lot of assets) Unreal Engine implemented a streaming system where the textures Mips are stored in the system memory and copied to GPU only when required (read: when they need to be rendered). This is a pretty advanced system that we would like to support in glTFRuntime (it will allows to dinamically load huge scenes without filling your GPU memory).
+To reduce the amount of used GPU memory (especially for very big levels with lot of assets) Unreal Engine implements a streaming system where the textures Mips are stored in the system memory and copied to GPU only when required (read: when they need to be rendered). This is a pretty advanced system that I would like to support in glTFRuntime (it will allows to dinamically load huge scenes without filling your GPU memory).
+
+Virtual Texturing has multiple meanings in Unreal Engine, here I am referring to "virtual texture streaming": textures are placed on a virtual grid with a configurable cell size. Instead of loading a whole texture, the streaming system can load the "visible" part of it falling into a specific cell. This potentially results in more efficient memory usage (again at a performance cost).
+
+## Notes
+
+GLTF makes a difference between "textures" and "images":
+
+"images" are the blob containign the images data, while "textures" are the combination of "images" and "samplers" (samplers are the filters used when reading textures, like nearest, bilinear... and the wrapping strategy, like repeat or clamp)
+
+The "compression" setting in the Images config structures has currently no usage (but glTFRuntime plugins developers can make use of it)
 
 
