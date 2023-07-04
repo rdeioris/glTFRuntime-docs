@@ -184,6 +184,8 @@ in your material asset:
 
 Check the M_glTFRuntimeBase material into the plugin Content directory for more infos.
 
+More info about textures: https://github.com/rdeioris/glTFRuntime-docs/blob/master/Textures.md
+
 # Collisions
 
 By default, generated StaticMeshes have no collisions. You can assign collision boxes and spheres using the configuration structure (the one you already used for materials):
