@@ -39,6 +39,8 @@ UTexture2DArray* LoadImageArrayFromBlob(const FglTFRuntimeImagesConfig& ImagesCo
 Image indices are related to the gltf asset (so you may want to iterate them, the ```int32 GetNumImages() const``` method will help in this).
 Blob is meant for assets directly loaded from a file or a url:
 
+![Blob](Docs/Screenshots/Textures000.PNG?raw=true "Blob")
+
 ## MipMaps
 
 Each texture is composed by 1 ore more mipmaps. Mipmaps (or Mips) are reduced (in size) variants of the same image. Having optimized
@@ -46,10 +48,13 @@ variants of the same image based on the required (on screen) size can improve GP
 
 The default behaviour of glTFRuntime is to have a single Mip for each texture, but you can enable automatic Mips generation or (if the format supports it, like KTX2 or DDS) automatic mips extraction from the image asset.
 
-To automatically generate Mips, you need to enable the ```bGeneratesMips``` flag in the Materials Config structure:
+To automatically generate Mips, you need to enable the ```bGeneratesMipMaps``` flag in the Materials Config structure:
 
+![GenerateMips](Docs/Screenshots/Textures001.PNG?raw=true "GenerateMips")
 
-To automatically load Mips (if the format exposes them), you need to enable the ```bLoadMips``` flag in the Materials Config structure:
+To automatically load Mips (if the format exposes them), you need to enable the ```bLoadMipMaps``` flag in the Materials Config structure:
+
+![LoadMips](Docs/Screenshots/Textures002.PNG?raw=true "LoadMips")
 
 ## Texture Compression
 
@@ -62,7 +67,13 @@ Lucky enough GPUs supports uploading image data in a (lossy) compressed format. 
 If your image format supports one of those compression system (DXT5 or BC7 generally, both available in KTX2 and DDS formats) that data will be automatically uploaded to the GPU
 (dramatically reducing the amount of used memory).
 
+This is the result of loading the offigial Khronos sample of the "FlightHelmet" with the KTX2 extension (https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/FlightHelmet/glTF-KTX-BasisU):
+
+![KTX2](Docs/Screenshots/Textures003.PNG?raw=true "KTX2")
+
 Eventually you may want to automatically compress linear formats (like BGRA8) to compressed ones. You can do it by using the https://github.com/rdeioris/glTFRuntimeSTBImage plugin and enabling the bCompressMips flag in the Images config structure:
+
+![DXT](Docs/Screenshots/Textures004.PNG?raw=true "DXT")
 
 The result will be a DXT5 compressed texture.
 
