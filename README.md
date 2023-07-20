@@ -328,8 +328,17 @@ Just remember a bunch of notes:
 # TODO/WIP
 
 * Import Scenes as Sequencer Assets
-* More merge features
-* Support up to 12 bone/joint influences
+* More mesh-merge features
+* Automatic support for all of the Microsoft glTF-Toolkit extensions
+* Propose a GLTF extension for Signed Distance Fields (this will allow to support Lumen, and maybe Nanite)
+* Texture Streaming (already available in master as experimental)
+* Virtual Texture Streaming (still investigating if it is worthy)
+* glTF low-level api for extending and exporting assets
+* Hooks for JSON extras objects
+* Allow to load LODs from other simple formats like STL and OBJ
+* Improve point clouds support
+* Investigate URL chain load support (for loading assets with multiple parts stored remotely)
+* Investigate LZ4 compression
 
 # Commercial Support
 
