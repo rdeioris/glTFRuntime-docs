@@ -339,6 +339,7 @@ Just remember a bunch of notes:
 * Improve point clouds support
 * Investigate URL chain load support (for loading assets with multiple parts stored remotely)
 * Investigate LZ4 compression
+* Support for glXF format
 
 # Commercial Support
 
