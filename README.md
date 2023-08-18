@@ -325,6 +325,17 @@ Just remember a bunch of notes:
 * If you get an error about materials, it could be that your packaging procedure is not including the plugin's Content directory. Go to Project Settings/Packaging, and expand the main section for accessing advanced options. Now just add the glTFRuntime Content directory to 'Additional Asset Directories to Cook' ('to Package' in UE4). You could be forced to do this even if you are using your customized materials. (note: if you get the same problem when hitting 'launch' in the editor, just run the level one time in PIE mode to force loading of the material asset)
 * If you do not see the /glTFRuntime folder into the content browser (or packaging settings), ensure to enable (in 'view options') both Engine and Plugins content.
 
+# Slow HTTP downloads
+
+If your HTTP downloads are slow, ensure to add those line to DefaultEngine.ini
+
+```
+[HTTP]
+HttpThreadActiveFrameTimeInSeconds=0
+```
+
+The default behaviour is to 'tick' the HTTP client thread 200 times per second (that could result in very bad download performance)
+
 # TODO/WIP
 
 * Import Scenes as Sequencer Assets
