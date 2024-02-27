@@ -1,5 +1,5 @@
 
-# Retarging Mixamo Animations for ReadyPlayerMe Avatars
+# Retargeting Mixamo Animations for ReadyPlayerMe Avatars
 
 ![MixamoResult](RetargetingRPMAndMixamo_Data/MixamoResult.PNG?raw=true "MixamoResult")
 
@@ -13,7 +13,7 @@ We will not use the provided glTFRuntimeAssetActor but we will load everything m
 
 Note: those steps are pretty advanced and generally you do not need to follow them if the animations are fully GLTF compliant and compatible with your mesh skeleton.
 
-Mixamo Note: based on the selected character you may end with a different scheletal structure. Using the "David" character is highly suggested (I always had good results with it ;)
+Mixamo Note: based on the selected character you may end with a different skeletal structure. Using the "David" character is highly suggested (I always had good results with it ;)
 
 ## Step 0: Loading the RPM Avatar
 
@@ -52,7 +52,7 @@ Be prepared for a bit of spaghetti:
 
 ![Step2](RetargetingRPMAndMixamo_Data/Step2.PNG?raw=true "Step2")
 
-Thanks to the bounds height (the Z value, rememebr to break/split the Extent bounds pin of the GetBounds node) we can set the capsule 'Half Height' and move the SkeletalMeshComponent to the right vertical offset
+Thanks to the bounds height (the Z value, remember to break/split the Extent bounds pin of the GetBounds node) we can set the capsule 'Half Height' and move the SkeletalMeshComponent to the right vertical offset
 
 ![Step2_Viewport](RetargetingRPMAndMixamo_Data/Step2_Viewport.PNG?raw=true "Step2_Viewport")
 
@@ -72,7 +72,7 @@ Now import the FBX in blender (ensure to set the "Automatic Bone Orientation" fl
 
 ![Step3_BlenderImport](RetargetingRPMAndMixamo_Data/Step3_BlenderImport.PNG?raw=true "Step3_BlenderImport")
 
-And now slide the animation timeline to check that everythng is fine (it is obviously hard to understand what is going on given that we have only bones as visual reference).
+And now slide the animation timeline to check that everything is fine (it is obviously hard to understand what is going on given that we have only bones as visual reference).
 
 ![Step3_Blender](RetargetingRPMAndMixamo_Data/Step3_Blender.PNG?raw=true "Step3_Blender")
 
@@ -154,7 +154,7 @@ Hit play again:
 
 ![Step7_Viewport](RetargetingRPMAndMixamo_Data/Step7_Viewport.PNG?raw=true "Step7_Viewport")
 
-Great, the arms are fixed and theoretically if you animation has no root motion, you could end your worflow here.
+Great, the arms are fixed and theoretically if you animation has no root motion, you could end your workflow here.
 
 ## (Optional) Step 8: Root Motion
 

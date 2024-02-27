@@ -2,7 +2,7 @@
 
 A low level api for traversing glTF assets json fields is exposed (both to C++ and blueprints). It is a low level api, so consider building your own abstractions over it.
 
-VRM (https://vrm.dev/en/) is a glTF extension adding informations for humanoid characters targeted at VR environments.
+VRM (https://vrm.dev/en/) is a glTF extension adding information for humanoid characters targeted at VR environments.
 
 It is the perfect example for discovering how the low level api work.
 
@@ -34,14 +34,14 @@ it allows to define the joint mapped to a specific (known) humanoid bone.
 
 There is an official list of bones: https://github.com/vrm-c/vrm-specification/blob/master/specification/0.0/README.md#defined-bones
 
-So if you are asset as a skeleton with a bone named FooBar in it, this extension will allow you to recogninze FooBar as a 'jaw'
+So if you are asset as a skeleton with a bone named FooBar in it, this extension will allow you to recognize FooBar as a 'jaw'
 
 The mapping is managed by the  `$.extensions.VRM.humanoid.humanBones` array, so the first thing we need to do is knowing the size of the array to start indexing its elements:
 
 
 ![VRMhumanoid](Docs/Screenshots/VRMhumanoid.PNG?raw=true "VRMhumanoid")
 
-The GetArrySizeFromPath will return the size of the specified array.
+The GetArraySizeFromPath will return the size of the specified array.
 
 Now we can iterate the list of bones. The Json is something like this:
 

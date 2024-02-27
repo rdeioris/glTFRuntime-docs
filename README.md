@@ -111,7 +111,7 @@ By running the project in PIE, you will be able to see the hierarchy generated b
 
 ![DetailsTree](Docs/Screenshots/DetailsTree.PNG?raw=true "DetailsTree")
 
-This is managed automatically by the glTFRUntimeAssetActor implementation, but you are free to manipulate the glTF hierarchy as you need (included completely ignoring it)
+This is managed automatically by the glTFRuntimeAssetActor implementation, but you are free to manipulate the glTF hierarchy as you need (included completely ignoring it)
 
 # Loading Static Meshes
 
@@ -137,7 +137,7 @@ Notes:
 
 # Materials
 
-Materials, included PBR values and Textures as well as Slots, are automatically managed. All of the materials dinamically inherit from a so called 'UberMaterial'
+Materials, included PBR values and Textures as well as Slots, are automatically managed. All of the materials dynamically inherit from a so called 'UberMaterial'
 included in the plugin (albeit you are free to use another one by simply setting options, more on this below)
 
 In this example we will load the 'Damaged Helmet' asset available here:
@@ -153,7 +153,7 @@ As you can see, no special options are required to build a standard PBR Material
 
 Let's change the Level Blueprint to use another approach:
 
-This time we dinamically create a StaticMeshComponent and we assign the StaticMesh to it (note again the wrong transform):
+This time we dynamically create a StaticMeshComponent and we assign the StaticMesh to it (note again the wrong transform):
 
 ![PBRMaterial2](Docs/Screenshots/PBRMaterial2.PNG?raw=true "PBRMaterial2")
 
@@ -178,7 +178,7 @@ in your material asset:
 * emissiveFactor (vector3)
 * alphaCutoff (scalar)
 * baseColorTexture (texture2d)
-* normaltexture (texture2d)
+* normalTexture (texture2d)
 * metallicRoughnessTexture (texture2d)
 * emissiveTexture (texture2d)
 
@@ -221,7 +221,7 @@ By default glTFRuntime will create a new Skeleton for each SkeletalMesh, you can
 
 ![SkeletonOverride](Docs/Screenshots/SkeletonOverride.PNG?raw=true "SkeletonOverride")
 
-The 'Skeleton' field will assign the specific Skeleton to the SkeletalMesh, while the 'OverwriteRefSkeleton' flag, will copy the bone poses to the SkeletalMesh (this will avoid annoying retargeting issues, expecially if the bones rotations have been changed by your DCC software). 
+The 'Skeleton' field will assign the specific Skeleton to the SkeletalMesh, while the 'OverwriteRefSkeleton' flag, will copy the bone poses to the SkeletalMesh (this will avoid annoying retargeting issues, especially if the bones rotations have been changed by your DCC software). 
 
 # Skeletal Animations
 
@@ -243,7 +243,7 @@ Get the https://github.com/rdeioris/glTFRuntime-docs/blob/master/Docs/Assets/Suz
 
 This is accomplished by generating a curve from the asset and applying it at every tick.
 
-You can directly get a curve for a node animtion by using the LoadNodeAnimationCurve function:
+You can directly get a curve for a node animation by using the LoadNodeAnimationCurve function:
 
 ![LoadNodeAnimationCurve](Docs/Screenshots/LoadNodeAnimationCurve.PNG?raw=true "LoadNodeAnimationCurve")
 

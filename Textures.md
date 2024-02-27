@@ -21,7 +21,7 @@ Images data can be compressed in various formats, each one with a specific Pixel
 * DDS (implemented by glTFRuntime, DXT1, DXT3, DXT5, R16F, G16R16F, Float_RGBA, BC7, BGRA8)
 * WebP (implemented by https://github.com/rdeioris/glTFRuntimeWebP, BGRA8)
 * HDR (implemented by https://github.com/rdeioris/glTFRuntimeSTBImage, Float_RGBA)
-* KTX2 (immplemented by https://github.com/rdeioris/glTFRuntimeKTX2, BGRA8, DXT5)
+* KTX2 (implemented by https://github.com/rdeioris/glTFRuntimeKTX2, BGRA8, DXT5)
 
 If you are loading a GLTF scene (or a mesh) textures will be automatically extracted and applied to the specific object, but you can load them manually
 using one of the provided UFUNCTIONs of the UglTFRuntimeAsset class:
@@ -67,7 +67,7 @@ Lucky enough GPUs supports uploading image data in a (lossy) compressed format. 
 If your image format supports one of those compression system (DXT5 or BC7 generally, both available in KTX2 and DDS formats) that data will be automatically uploaded to the GPU
 (dramatically reducing the amount of used memory).
 
-This is the result of loading the offigial Khronos sample of the "FlightHelmet" with the KTX2 extension (https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/FlightHelmet/glTF-KTX-BasisU):
+This is the result of loading the official Khronos sample of the "FlightHelmet" with the KTX2 extension (https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/FlightHelmet/glTF-KTX-BasisU):
 
 ![KTX2](Docs/Screenshots/Textures003.png?raw=true "KTX2")
 
@@ -115,7 +115,7 @@ And the result:
 
 As we have seen GPU memory usage is one of the most critical part when working with textures. Those problems are often amplified when doing runtime loading.
 
-To reduce the amount of used GPU memory (especially for very big levels with lot of assets) Unreal Engine implements a streaming system where the textures Mips are stored in the system memory and copied to GPU only when required (read: when they need to be rendered). This is a pretty advanced system that I would like to support in glTFRuntime (it will allows to dinamically load huge scenes without filling your GPU memory).
+To reduce the amount of used GPU memory (especially for very big levels with lot of assets) Unreal Engine implements a streaming system where the textures Mips are stored in the system memory and copied to GPU only when required (read: when they need to be rendered). This is a pretty advanced system that I would like to support in glTFRuntime (it will allows to dynamically load huge scenes without filling your GPU memory).
 
 Virtual Texturing has multiple meanings in Unreal Engine, here I am referring to "virtual texture streaming": textures are placed on a virtual grid with a configurable cell size. Instead of loading a whole texture, the streaming system can load the "visible" part of it falling into a specific cell. This potentially results in more efficient memory usage (again at a performance cost).
 
@@ -123,7 +123,7 @@ Virtual Texturing has multiple meanings in Unreal Engine, here I am referring to
 
 GLTF makes a difference between "textures" and "images":
 
-"images" are the blob containign the images data, while "textures" are the combination of "images" and "samplers" (samplers are the filters used when reading textures, like nearest, bilinear... and the wrapping strategy, like repeat or clamp)
+"images" are the blob containing the images data, while "textures" are the combination of "images" and "samplers" (samplers are the filters used when reading textures, like nearest, bilinear... and the wrapping strategy, like repeat or clamp)
 
 The "compression" setting in the Images config structures has currently no usage (but glTFRuntime plugins developers can make use of it)
 
