@@ -18,30 +18,35 @@ Official sources available at https://github.com/rdeioris/glTFRuntime
 
 # Features
 
-* Allows to load Static Meshes, Skeletal Meshes, Animations, Cameras, Hierarchies, Materials and Textures from glTF 2.0 Embedded (.gltf) or Binary (.glb) files.
-* Assets can be loaded on the fly both in PIE and Packaged Games.
-* Assets can be loaded from the filesystem, http servers or raw json strings.
-* Assets can be compressed with gzip (will be decompressed on the fly)
+* Allows to load Static Meshes, Skeletal Meshes, Animations, Cameras, Lights, Hierarchies, Materials and Textures from glTF 2.0 Embedded (.gltf) or Binary (.glb) files
+* Extensive API accessible from both C++ and Blueprints
+* Pluggable support for more file formats (OBJ, STL, FBX and MagicaVoxel extensions already available at https://github.com/rdeioris/glTFRuntime/blob/master/README.md#plugins)
+* Assets can be loaded on the fly both in PIE and Packaged Games
+* Assets can be loaded from the filesystem, http servers, the clipboard, commandlines output or raw json strings.
+* Assets can be compressed with gzip or lz4 (will be decompressed on the fly)
 * Assets can be archived in zip files (they will be extracted and decompressed on the fly)
 * Supports generating ad-hoc Skeletons or reusing already existing ones (a gltf Exporter for Skeletons is included too)
-* Non skeletons/skins-related animations are exposed as Curves.
-* Full support for PBR Materials
+* Non skeletons/skins-related animations are exposed as Curves
+* Full support for PBR Materials.
 * Support for the Specular/Glossiness extension (KHR_materials_pbrSpecularGlossiness)
-* Support for glTF 2.0 Sparse Accessors
-* Support for multiple texture coordinates/channels/uvs
-* Allows to define Static Meshes collisions (Spheres, Boxes, Complex Meshes) at runtime as well as PhysicsAssets for SkeletalMeshes.
-* StaticMeshes can be imported as SkeletalMeshes (with a single root bone) and the opposite.
+* Support for glTF 2.0 Sparse Accessors.
+* Support for multiple texture coordinates/channels/uvs.
+* Allows to define Static Meshes collisions (Spheres, Boxes, Complex Meshes) at runtime as well as PhysicsAssets for SkeletalMeshes
+* StaticMeshes can be imported as SkeletalMeshes (with a single root bone) and the opposite
 * Support for MorphTargets
 * Support for merging multiple meshes on the same skeleton
 * Support for Vertex Colors
 * Support for VRM extensions
-* Preliminary support for Audio Emitters (MSFT_audio_emitter, wav files supported, vorbis and opus will be available soon)
+* Preliminary support for Audio Emitters (MSFT_audio_emitter, wav files supported, check https://github.com/rdeioris/glTFRuntimeAudio for Opus, Vorbis and MP3)
 * Support for KHR_mesh_quantization
 * Async StaticMesh and SkeletalMesh loading
-* Support for KHR_materials_variants
+* Support for KHR_materials_variants, KHR_materials_clearcoat, KHR_materials_unlit, KHR_materials_ior, KHR_materials_emissive_strength
 * Support for EXT_mesh_gpu_instancing
 * Support for MSFT_lod (https://github.com/rdeioris/glTFRuntime-docs/blob/master/LOD.md)
-* Support for KHR_materials_clearcoat
+* Support for EXT_meshopt_compression and KHR_mesh_quantization
+* Support for DDS textures
+* Support for KHR_lights_punctual
+* Support for Texture Streaming
 
 Platforms supported are: Win64, Linux, Mac, Android, iOS, Linux Arm64 and Hololens2
 
@@ -53,9 +58,9 @@ Consider buying the plugin from the Epic Marketplace (https://www.unrealengine.c
 
 If you want to build from sources, just start with a C++ project, and clone the master branch into the Plugins/ directory of your project, regenerate the solution files and rebuild the project.
 
-Once the plugin is enabled you will get 3 new main C++/Blueprint functions:
+Once the plugin is enabled you will get a set of C++/Blueprint functions for loading assets at runtime from various sources:
 
-![MainFunctions](Docs/Screenshots/MainFunctions.PNG?raw=true "MainFunctions")
+![image](https://github.com/rdeioris/glTFRuntime-docs/assets/2234592/f29a45a3-f731-47fb-aabd-2e765a20767a)
 
 Let's start with remote asset loading (we will use the official glTF 2.0 samples), open your level blueprint and on the BeginPlay Event, trigger
 the runtime asset loading:
@@ -157,7 +162,7 @@ This time we dynamically create a StaticMeshComponent and we assign the StaticMe
 
 ![PBRMaterial2](Docs/Screenshots/PBRMaterial2.PNG?raw=true "PBRMaterial2")
 
-What if we want to change the UberMaterial ? glTFRuntime expects 4 different Material Types: Opaque, TwoSided, Translucent and TwoSidedTranslucent.
+What if we want to change the UberMaterial ? glTFRuntime expects 6 different Material Types: Opaque, TwoSided, Translucent, TwoSidedTranslucent, Masked and TwoSidedMasked
 
 If you want to completely change the rendering mode of glTF assets you need to define all of them.
 
@@ -184,6 +189,8 @@ in your material asset:
 
 Check the M_glTFRuntimeBase material into the plugin Content directory for more infos.
 
+Eventually you can completely bypass the UberMaterial logic and force a common base material by setting the "ForceMaterial" field in the MaterialsConfig structure.
+
 More info about textures: https://github.com/rdeioris/glTFRuntime-docs/blob/master/Textures.md
 
 # Collisions
@@ -194,12 +201,14 @@ By default, generated StaticMeshes have no collisions. You can assign collision 
 
 The BuildSimpleCollision flag, generates an automatic collision based on the mesh bounding box.
 
-You can even set a complex collision by changing the collision complexity field, in such a case ensure to enable the AllowCPUAccess flag, otherwise the physics engine will not be able to generate the related shape. 
+You can even set a complex collision by changing the collision complexity field, in such a case ensure to enable the AllowCPUAccess flag and an Outer set (generally the StaticMeshComponent will be enough), otherwise the physics engine will not be able to generate the related shape.
+
+If you prefer convex collisions check https://github.com/rdeioris/glTFRuntimeConvexCollisions
 
 # Loading Skeletal Meshes
 
 glTF Meshes can be combined with a so called 'Skin' (the equivalent of Unreal Engine Skeleton).
-Currently glTFRuntime supports up to 4 influences per vertex (support for 12 is on work).
+glTFRuntime supports unlimited influences per vertex (but if you need more than 12 influences you need to enable the feature in the Unreal Project Settings).
 
 Download the CesiumMan asset: https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/CesiumMan/glTF-Embedded/CesiumMan.gltf
 
@@ -233,6 +242,8 @@ All of them require a SkeletalMesh to extract the Skeleton (this is technically 
 
 Note that as long as different SkeletalMeshes use the same Skeleton, you can share AnimationBlueprint too.
 
+MorphTarget curves are loaded too.
+
 # Nodes Animations
 
 The glTF format, supports generic animation of nodes (read: changing their transforms over time).
@@ -249,9 +260,9 @@ You can directly get a curve for a node animation by using the LoadNodeAnimation
 
 Check the code in the Tick method of glTFRuntimeAssetActor for an example:
 
-https://github.com/rdeioris/glTFRuntime/blob/master/Source/glTFRuntime/Private/glTFRuntimeAssetActor.cpp#L135
+https://github.com/rdeioris/glTFRuntime/blob/master/Source/glTFRuntime/Private/glTFRuntimeAssetActor.cpp
 
-Note: rotations are managed as Euler rotations (this is a current limit of Unreal Engine Curves), so beware of the Gimbal Lock! In case of rotation errors just add more keyframes.
+Note: rotations are generally managed as Euler rotations in Unreal Curves, so beware of the Gimbal Lock! To reduce the impact, Quaternions are exposed too.
 
 # glTF Hierarchy
 
@@ -288,16 +299,14 @@ If you specify a zip archive as the asset to load, glTFRuntime will use it as th
 The default behaviour is to search for the first file with .glb, .gltf, .json or .js extension in the archive, but you can force the file to use as the entry point
 by defining the ArchiveEntryPoint string in the LoaderConfig.
 
-Zip files can be loaded both from filesystem and HTTP servers.
-
 # glTF JSON low-level api (A.K.A. managing VRM assets)
 
-Check https://github.com/rdeioris/glTFRuntime-docs/blob/master/VRM.md
+Check https://github.com/rdeioris/glTFRuntime-docs/blob/master/VRM.md for an example
 
 # Errors Management
 
-The three main functions (glTFLoadAssetFromFilename, glTFLoadAssetFromString, glTFLoadAssetFromUrl) simply returns Null in case the file is not available
-or the json is not valid. No more checks are made by the three functions. All of the other checks are made by the glTFRuntimeAsset returned by them.
+The loader functions (glTFLoadAssetFromFilename, glTFLoadAssetFromString, glTFLoadAssetFromUrl, ...) simply returns Null in case the file is not available
+or the asset structure is not valid. No more checks are made by the three functions. All of the other checks are made by the glTFRuntimeAsset returned by them.
 
 The glTFRuntimeAsset instances triggers an event whenever an error is found during parsing or assets generation. You can subscribe to this event easily:
 
@@ -342,14 +351,11 @@ The default behaviour is to 'tick' the HTTP client thread 200 times per second (
 * More mesh-merge features
 * Automatic support for all of the Microsoft glTF-Toolkit extensions
 * Propose a GLTF extension for Signed Distance Fields (this will allow to support Lumen, and maybe Nanite)
-* Texture Streaming (already available in master as experimental)
 * Virtual Texture Streaming (still investigating if it is worthy)
 * glTF low-level api for extending and exporting assets
 * Hooks for JSON extras objects
-* Allow to load LODs from other simple formats like STL and OBJ
 * Improve point clouds support
 * Investigate URL chain load support (for loading assets with multiple parts stored remotely)
-* Investigate LZ4 compression
 * Support for glXF format
 
 # Commercial Support
