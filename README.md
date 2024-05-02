@@ -62,6 +62,8 @@ Once the plugin is enabled you will get a set of C++/Blueprint functions for loa
 
 ![image](https://github.com/rdeioris/glTFRuntime-docs/assets/2234592/f29a45a3-f731-47fb-aabd-2e765a20767a)
 
+(All of them take an optional LoaderConfig structure that you can use for changing the loading behaviours, including axis orientation and scaling) 
+
 Let's start with remote asset loading (we will use the official glTF 2.0 samples), open your level blueprint and on the BeginPlay Event, trigger
 the runtime asset loading:
 
@@ -298,6 +300,8 @@ If you specify a zip archive as the asset to load, glTFRuntime will use it as th
 
 The default behaviour is to search for the first file with .glb, .gltf, .json or .js extension in the archive, but you can force the file to use as the entry point
 by defining the ArchiveEntryPoint string in the LoaderConfig.
+
+Password protected zip files are supported by setting the password in the EncryptionKey string of the LoaderConfig structure.
 
 # glTF JSON low-level api (A.K.A. managing VRM assets)
 
