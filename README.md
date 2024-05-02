@@ -203,7 +203,7 @@ By default, generated StaticMeshes have no collisions. You can assign collision 
 
 The BuildSimpleCollision flag, generates an automatic collision based on the mesh bounding box.
 
-You can even set a complex collision by changing the collision complexity field, in such a case ensure to enable the AllowCPUAccess flag and an Outer set (generally the StaticMeshComponent will be enough), otherwise the physics engine will not be able to generate the related shape.
+You can even set a complex collision by changing the collision complexity field, in such a case ensure to enable the AllowCPUAccess flag and an Outer set (generally the StaticMeshComponent will be enough, the Runtime Asset Actor already does it automatically), otherwise the physics engine will not be able to generate the related shape.
 
 If you prefer convex collisions check https://github.com/rdeioris/glTFRuntimeConvexCollisions
 
