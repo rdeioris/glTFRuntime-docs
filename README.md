@@ -24,7 +24,7 @@ Official sources available at https://github.com/rdeioris/glTFRuntime
 * Assets can be loaded on the fly both in PIE and Packaged Games
 * Assets can be loaded from the filesystem, http servers, the clipboard, commandlines output or raw json strings.
 * Assets can be compressed with gzip or lz4 (will be decompressed on the fly)
-* Assets can be archived in zip files (they will be extracted and decompressed on the fly)
+* Assets can be archived in zip files (they will be extracted and decompressed on the fly, password protected zip files are supported too)
 * Supports generating ad-hoc Skeletons or reusing already existing ones (a gltf Exporter for Skeletons is included too)
 * Non skeletons/skins-related animations are exposed as Curves
 * Full support for PBR Materials.
