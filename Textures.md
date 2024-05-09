@@ -113,7 +113,7 @@ And the result:
 
 ## Streaming 
 
-As we have seen GPU memory usage is one of the most critical part when working with textures. Those problems are often amplified when doing runtime loading.
+As we have seen, GPU memory usage is one of the most critical part when working with textures. Those problems are often amplified when doing runtime loading.
 
 To reduce the amount of used GPU memory (especially for very big levels with lot of assets) Unreal Engine implements a streaming system where the textures Mips are copied to the GPU only when required (read: when the specific Mip level needs to be rendered).
 
