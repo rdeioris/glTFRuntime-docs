@@ -121,9 +121,11 @@ If you have multiple mips for textures, you can enable glTFRuntime texture strea
 
 If you want to test texture streaming you can use the 'Statistics' tool under the Tools/Audit menu, and remember that while in editor the streamer will always keep 7 mips level (so you need at least 8 levels for seeing it working).
 
-## WIP: Virtual Texturing
+## WIP/TODO: Virtual Texturing
 
 Virtual Texturing has multiple meanings in Unreal Engine, here I am referring to "virtual texture streaming": textures are placed on a virtual grid with a configurable cell size. Instead of loading a whole texture, the streaming system can load the "visible" part of it falling into a specific cell. This potentially results in more efficient memory usage (again at a performance cost).
+
+There is currently no support in glTFRuntime for virtual texture streaming (as of Unreal 5.4 most of the functions for generating the grid are not exposed to plugins).
 
 ## Notes
 
