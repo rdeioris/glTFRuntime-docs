@@ -23,7 +23,7 @@ Images data can be compressed in various formats, each one with a specific Pixel
 * HDR (implemented by https://github.com/rdeioris/glTFRuntimeSTBImage, Float_RGBA)
 * KTX2 (implemented by https://github.com/rdeioris/glTFRuntimeKTX2, BGRA8, DXT5)
 
-If you are loading a GLTF scene (or a mesh) textures will be automatically extracted and applied to the specific object, but you can load them manually
+If you are loading a GLTF scene (or a mesh), textures will be automatically extracted and applied to the specific object, but you can load them manually
 using one of the provided UFUNCTIONs of the UglTFRuntimeAsset class:
 
 ```cpp
@@ -111,11 +111,17 @@ And the result:
 
 ![CubeMapTexture](Docs/Screenshots/Textures008.png?raw=true "CubeMapTexture")
 
-## WIP: Streaming and Virtual Texturing
+## Streaming 
 
 As we have seen GPU memory usage is one of the most critical part when working with textures. Those problems are often amplified when doing runtime loading.
 
-To reduce the amount of used GPU memory (especially for very big levels with lot of assets) Unreal Engine implements a streaming system where the textures Mips are stored in the system memory and copied to GPU only when required (read: when they need to be rendered). This is a pretty advanced system that I would like to support in glTFRuntime (it will allows to dynamically load huge scenes without filling your GPU memory).
+To reduce the amount of used GPU memory (especially for very big levels with lot of assets) Unreal Engine implements a streaming system where the textures Mips are copied to the GPU only when required (read: when the specific Mip level needs to be rendered).
+
+If you have multiple mips for textures, you can enable glTFRuntime texture streaming by setting the 'bStreaming' flag in the ImagesConfig structure. This will keep a copy of all of the Mips in system memory, and the streamer will copy the required ones on the GPU.
+
+If you want to test texture streaming you can use the 'Statistics' tool under the Tools/Audit menu, and remember that while in editor the streamer will always keep 7 mips level (so you need at least 8 levels for seeing it working).
+
+## WIP: Virtual Texturing
 
 Virtual Texturing has multiple meanings in Unreal Engine, here I am referring to "virtual texture streaming": textures are placed on a virtual grid with a configurable cell size. Instead of loading a whole texture, the streaming system can load the "visible" part of it falling into a specific cell. This potentially results in more efficient memory usage (again at a performance cost).
 
