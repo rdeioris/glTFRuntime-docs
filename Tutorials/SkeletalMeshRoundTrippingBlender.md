@@ -89,3 +89,13 @@ To fix this, set the Overwrite Ref Skeleton to Enabled in the glTFRuntimeSkeleta
 And we get a successful result:
 
 ![Step2 Fix Result](SkeletalMeshRoundTrippingBlender_Data/Step2_FixResult.png?raw=true "Step2 Fix Result")
+
+
+# The Morph Target problem
+
+As of Unreal Engine 5.4.2 the built in gltf exporter does not support exporting morph targets. With some legwork it's still possible to roundtrip the skeletal mesh with morph targets though, the simplified version is:
+
+* In Unreal, export the skeletal mesh as FBX - this supports morph targets but you lose materials
+* In Blender, import the FBX mesh and fix the materials either manually recreating them or importing the glTF and assigning the materials from that
+* In Blender, export the mesh  to .glTF with shapekeys enabled
+* In Unreal, load the skeletal mesh (as described in the earlier section) and in the glTFRuntimeSkeletalMeshConfig ensure you set the Morph Targets Duplicate strategy is set to Merge. Without doing this it will import the morph targets but setting their values does not  have an effect.
