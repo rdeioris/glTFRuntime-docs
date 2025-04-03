@@ -13,3 +13,10 @@ This base class allows the user to define how to fill the additional information
 The created asset is always the outer of the glTFRuntimeAssetUserData instance.
 
 To add logic to a glTFRuntimeAssetUserData class you can just override the ReceiveFillAssetUserData (Fill AssetUserData) UFunction. It receives the index of the specific object (mesh, skin, material, texture, ...) as the only argument.
+
+# Example for adding uri to each Texture
+
+* Create a Blueprint Class inheriting from glTFRuntimeAssetUserData
+* Override the FillAssetUserData with the following content:
+
+![FillAssetUserData](Docs/Assets/AssetUserData.png?raw=true "FillAssetUserData")
