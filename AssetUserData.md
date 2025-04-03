@@ -19,4 +19,4 @@ To add logic to a glTFRuntimeAssetUserData class you can just override the Recei
 * Create a Blueprint Class inheriting from glTFRuntimeAssetUserData
 * Override the FillAssetUserData with the following content:
 
-![FillAssetUserData](Docs/Assets/Screenshots/AssetUserData.png?raw=true "FillAssetUserData")
+![FillAssetUserData](Docs/Screenshots/AssetUserData.png?raw=true "FillAssetUserData")
