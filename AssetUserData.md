@@ -17,6 +17,11 @@ To add logic to a glTFRuntimeAssetUserData class you can just override the Recei
 # Example for adding uri to each Texture
 
 * Create a Blueprint Class inheriting from glTFRuntimeAssetUserData
+* Add a Uri string variable to the Blueprint class (it will contain the uri of the texture)
 * Override the FillAssetUserData with the following content:
 
 ![FillAssetUserData](Docs/Screenshots/AssetUserData.png?raw=true "FillAssetUserData")
+
+Note the initial check about the asset type
+
+* Finally, in the LoaderConfig (like in glTFLoadAssetFromFilename) add the previously created Blueprint class to the array of "Asset User Data Classes"
